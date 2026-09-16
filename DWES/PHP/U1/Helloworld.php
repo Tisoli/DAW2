@@ -42,9 +42,39 @@
         echo "<p>El precio con IVA es :" . $precio + $precio * IVA_GENERAL . "</p>";
         echo "<p>El precio con IVA reducido es :" . $precio + $precio * IVA_REDUCIDO . "</p>";
         
+        var_dump(PHP_VERSION);
+        var_dump(__FILE__);
+
+        $price = 30.54;
+        $a = 5 ;
+        $b = $a **10 ;
+        var_dump($b);
+
+        $a = 7;
+        $mod = $a % 2;
+        var_dump($mod);
+        $a = 11;
+        $mod = $a % 4; 
+        var_dump($mod);
+        
+        $b = 5;
+        $suma =$b++ +2 ;
+        echo "suma b es $suma";
+
+        $a = 5;
+        $b = "5";
+        $bool = $a == $b;
+        var_dump($bool);
+
+
+        $a = 5;
+        $b = "5";
+        $bool = $a === $b;
+        var_dump($bool);
 
 
         ?>
+
 
     </p>
 </body>
