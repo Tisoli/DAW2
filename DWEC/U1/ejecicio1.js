@@ -13,9 +13,10 @@ function calculadora(){
             const confima = confirm("Seguro salir?(s/n):");
             if (confima.confirm(true)){
                 console.log("Saliendo del programa");
-                
+
             }
         }
+
 
     }
 }

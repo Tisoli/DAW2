@@ -54,6 +54,24 @@
 
     echo $nombre;
 
+    echo "<br>";
+
+    for($i = 0; $i <= 10; $i++){
+        echo $i;
+        if($i<10){
+            echo ", ";
+        }
+    }
+
+    echo "<br>";
+
+    for($i = 0; $i <= 100; $i++){
+        if($i % 5 == 0 && $i % 7 == 0){
+            echo $i . ",";
+        }
+    }
+
+
     ?>
 </body>
 </html>
