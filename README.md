@@ -2,6 +2,8 @@
 
 <img src="https://github.com/YunYueSama/codex-deepseek-pet/blob/main/design/character-standard.png" width="700" alt="Gran ballena de DeepSeek">
 
+~~El código fue proporcionado con la ayuda de Deepseek (es broma)~~
+
 # 📚 Apuntes de DAW2
 
 **Registro de mi aprendizaje en DAW2, actualizado continuamente.**

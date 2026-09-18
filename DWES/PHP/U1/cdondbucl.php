@@ -185,6 +185,10 @@
     //POR CLAVE DESCENDENTE
     krsort($p);
     var_dump($p);
+
+    foreach(array_keys($p) as $solo){
+        echo "$solo , ";
+    }
     ?>
 
 </body>
