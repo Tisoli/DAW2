@@ -70,6 +70,29 @@
             echo $i . ",";
         }
     }
+           
+    echo "<br>";
+
+    $i= 1;
+    while($i<=100){
+        if($i % 5 == 0 && $i % 7 == 0){
+            echo $i . ",";
+        }        
+        $i ++;
+        
+    }
+
+    echo "<br>";
+
+    $cars = array("seat","audi","BMW");
+    $food = ["tomates","avocados","carrots"];
+    $food[3]= "eggplants";
+    foreach ($food as $as){
+        echo "$as <br>";
+    }
+
+    echo count($cars);  
+
 
 
     ?>
