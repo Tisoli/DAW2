@@ -1,58 +1,40 @@
 <div align="center">
 
-<!-- 大肥鱼图片：CDN 直链，直接可用 -->
-<img src="https://raw.githubusercontent.com/the-beating-light-of-the-nail/deepseek-chan-meme-pack/main/previews/123.webp" width="180" alt="DeepSeek 大肥鱼">
+<img src="https://raw.githubusercontent.com/the-beating-light-of-the-nail/deepseek-chan-meme-pack/main/previews/123.webp" width="180" alt="Gran ballena de DeepSeek">
 
-# 📚 DAW2 学习笔记
+# 📚 Apuntes de DAW2
 
-**记录 DAW2 学习路上的点滴，持续更新中。**
+**Registro de mi aprendizaje en DAW2, actualizado continuamente.**
 
 <a href="https://github.com/Tisoli/DAW2">
-  <img src="https://img.shields.io/github/stars/Tisoli/DAW2?style=for-the-badge&logo=github&color=blue" alt="Stars">
+  <img src="https://img.shields.io/github/stars/Tisoli/DAW2?style=for-the-badge&logo=github&color=blue" alt="Estrellas">
 </a>
 <a href="https://github.com/Tisoli/DAW2/commits/main">
-  <img src="https://img.shields.io/github/last-commit/Tisoli/DAW2?style=for-the-badge&color=blue" alt="Last Commit">
+  <img src="https://img.shields.io/github/last-commit/Tisoli/DAW2?style=for-the-badge&color=blue" alt="Último commit">
 </a>
-<img src="https://img.shields.io/badge/笔记-持续更新-blue?style=for-the-badge" alt="持续更新">
+<img src="https://img.shields.io/badge/Apuntes-Actualización%20continua-blue?style=for-the-badge" alt="Actualización continua">
 
-[开始阅读](#-目录) · [笔记分类](#-笔记分类) · [致谢与来源](#-致谢与来源)
+[Empezar a leer](#-introducción) · [Cómo usar](#-cómo-usar) · [Agradecimientos y fuentes](#-agradecimientos-y-fuentes)
 
 </div>
 
 ---
 
-## 📖 简介
+## 📖 Introducción
 
-这里是我的个人学习笔记仓库，主要记录 DAW2 学习过程中的内容：
+Este es mi repositorio personal de apuntes de DAW2. Aquí registro:
 
-- 课程笔记与知识点整理
-- 代码练习与项目实践
-- 疑难问题与解决方案
-- 学习心得与总结
+- Apuntes de clase y organización de conceptos
+- Ejercicios de código y prácticas
+- Problemas encontrados y sus soluciones
+- Reflexiones y resúmenes de aprendizaje
 
-笔记以 Markdown 为主，方便阅读和检索。
+Los apuntes están principalmente en Markdown, para que sean fáciles de leer y consultar.
 
-## 🗂 目录
+## 🚀 Cómo usar
 
-- [笔记分类](#-笔记分类)
-- [如何使用](#-如何使用)
-- [致谢与来源](#-致谢与来源)
-
-## 📚 笔记分类
-
-> 请根据你实际创建的文件夹名称修改下面的表格。
-
-| 分类 | 说明 | 链接 |
-| --- | --- | --- |
-| 课程笔记 | DAW2 各科目课程笔记 | [进入](./notes/) |
-| 代码练习 | 练习代码与示例 | [进入](./code/) |
-| 项目实践 | 项目相关记录 | [进入](./projects/) |
-| 疑难杂症 | 问题排查与解决 | [进入](./troubleshooting/) |
-
-## 🚀 如何使用
-
-1. 直接浏览仓库中的 Markdown 文件。
-2. 也可以克隆到本地：
+1. Navega directamente por los archivos Markdown del repositorio.
+2. También puedes clonarlo en local:
 
 ```bash
 git clone https://github.com/Tisoli/DAW2.git
