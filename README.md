@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/YunYueSama/codex-deepseek-pet/blob/main/docs/motion-preview.webp" width="180" alt="Gran ballena de DeepSeek">
+<img src="https://github.com/YunYueSama/codex-deepseek-pet/blob/main/docs/motion-preview.webp" width="700" alt="Gran ballena de DeepSeek">
 
 # 📚 Apuntes de DAW2
 
