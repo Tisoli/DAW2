@@ -26,8 +26,7 @@ Este es mi repositorio personal de apuntes de DAW2. Aquí registro:
 
 - Apuntes de clase y organización de conceptos
 - Ejercicios de código y prácticas
-- Problemas encontrados y sus soluciones
-- Reflexiones y resúmenes de aprendizaje
+- Proyecto
 
 Los apuntes están principalmente en Markdown, para que sean fáciles de leer y consultar.
 
