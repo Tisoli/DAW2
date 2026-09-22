@@ -1,74 +1,56 @@
-function calculadora() {
-    while (true) {
-        const opcion = prompt(
-            "--- CALCULADORA ---\n" +
-            "1 para sumar\n" +
-            "2 para restar\n" +
-            "3 para multiplicar\n" +
-            "4 para dividir\n" +
-            "5 para obtener el módulo\n" +
-            "6 para salir"
-        );
+let salir = false
+while (salir === false)  {
+console.log("-------------------------------")
+console.log("Pulse 1 para sumar")
+console.log("Pulse 2 para restar")
+console.log("Pulse 3 para multiplicar")
+console.log("Pulse 4 para dividir")
+console.log("Pulse 5 para obtener el modulo")
+console.log("Pulse 6 para salir")
+console.log("-------------------------------")
+let opcion = prompt("Selecciona una opcion")
+let total
+let numeritoA
+let numeritoB
 
-        if (opcion === "6") {
-            const confirmacion = await preguntar("¿Está seguro de que desea salir? (s/n): ");
-            if (confirmacion.toLowerCase() === "s") {
-                console.log("Saliendo del programa...");
-                rl.close();
-                break;
-            } else {
-                console.log("Operación cancelada. Volviendo al menú...");
-                continue;
-            }
-        }
-
-        if (!["1", "2", "3", "4", "5"].includes(opcion)) {
-            alert("Opción no válida. Intente de nuevo.");
-            continue;
-        }
-
-        const num1 = parseFloat(prompt("Ingrese el primer número:"));
-        const num2 = parseFloat(prompt("Ingrese el segundo número:"));
-
-        if (isNaN(num1) || isNaN(num2)) {
-            alert("Error: debe ingresar números válidos.");
-            continue;
-        }
-
-        let resultado;
-
-        switch (opcion) {
-            case "1":
-                resultado = num1 + num2;
-                break;
-            case "2":
-                resultado = num1 - num2;
-                break;
-            case "3":
-                resultado = num1 * num2;
-                break;
-            case "4":
-                if (num2 === 0) {
-                    alert("Error: no se puede dividir entre cero.");
-                    continue;
-                }
-                resultado = num1 / num2;
-                break;
-            case "5":
-                if (num2 === 0) {
-                    alert("Error: no se puede calcular el módulo entre cero.");
-                    continue;
-                }
-                resultado = num1 % num2;
-                break;
-        }
-
-        alert(`Resultado: ${resultado}`);
-    }
+switch(opcion){
+    case "1":
+        numeritoA = prompt("Selecciona un numero")
+        numeritoB = prompt("Selecciona otro numero")
+        total = numeritoA + numeritoB
+        console.log(total)
+        break;
+        
+    case "2":
+        numeritoA = prompt("Selecciona un numero")
+        numeritoB = prompt("Selecciona otro numero")
+        total = numeritoA - numeritoB
+        console.log(total)        
+        break;
+    case "3":
+        numeritoA = Number(prompt("Selecciona un numero"))
+        numeritoB = Number(prompt("Selecciona un numero"))
+        total = numeritoA * numeritoB
+        console.log(total)
+        break;
+        
+    case "4":
+        numeritoA = Number(prompt("Selecciona un numero"))
+        numeritoB = Number(prompt("Selecciona un numero"))
+        total = numeritoA / numeritoB
+        console.log(total)
+        break;
+        
+    case "5":
+        numeritoA = Number(prompt("Selecciona un numero"))
+        numeritoB = Number(prompt("Selecciona un numero"))
+        total = numeritoA % numeritoB
+        console.log(total)
+        break;
+    case "6":
+        salir = confirm("¿Seguro que quieres salir?")
+        break;
+        default:
+            "otro";
 }
-
-calculadora();
-
-
-
-
+}
