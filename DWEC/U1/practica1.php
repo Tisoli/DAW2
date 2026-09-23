@@ -35,6 +35,18 @@
         case 8:
             echo '<script src="ejecicio1.8.js"></script>';
             break;
+        case 9:
+            echo '<script src="ejecicio1.9.js"></script>';
+            break;
+        case 10:
+            echo '<script src="ejecicio1.10.js"></script>';
+            break;
+        case 11:
+            echo '<script src="ejecicio1.11.js"></script>';
+            break;
+        case 12:
+            echo '<script src="ejecicio1.12.js"></script>';
+            break;
     }
 
     ?>

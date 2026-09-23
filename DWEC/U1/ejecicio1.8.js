@@ -26,7 +26,8 @@ if (indiceEncontrado !== -1) {
 }
 
 if (valida) {
-    console.log("bienvenida");
-} else {
+    console.log(`Bienvenida ${usuarios[indiceEncontrado][0]}`);
+}
+else {
     console.log("error");
 }
