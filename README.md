@@ -16,7 +16,8 @@
 </a>
 <img src="https://img.shields.io/badge/Apuntes-Actualización%20continua-blue?style=for-the-badge" alt="Actualización continua">
 
-[Empezar a leer](#-introducción) · [Cómo usar](#-cómo-usar) · [Agradecimientos y fuentes](#-agradecimientos-y-fuentes)
+[Empezar a leer](#-introducción) · [Cómo usar](#-cómo-usar)· [¿Tienes problemas con la clonación?](#-Si-encuentra-un-error)
+
 
 </div>
 
@@ -39,3 +40,7 @@ Los apuntes están principalmente en Markdown, para que sean fáciles de leer y 
 
 ```bash
 git clone https://github.com/Tisoli/DAW2.git
+
+##  Si encuentra un error
+
+1.

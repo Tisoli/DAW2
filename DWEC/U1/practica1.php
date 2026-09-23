@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1</title>
 </head>
+
 <body>
     <?php
-    $ejercicio = 7;
-    switch ($ejercicio){
+    $ejercicio = 8;
+    switch ($ejercicio) {
         case 1:
             echo '<script src="ejecicio1.1.js"></script> ';
             break;
@@ -21,17 +23,21 @@
         case 4:
             echo '<script src="ejecicio1.4.js"></script>';
             break;
-         case 5:
+        case 5:
             echo '<script src="ejecicio1.5.js"></script>';
             break;
-             case 6:
+        case 6:
             echo '<script src="ejecicio1.6.js"></script>';
             break;
-             case 7:
+        case 7:
             echo '<script src="ejecicio1.7.js"></script>';
             break;
-            }
-       
+        case 8:
+            echo '<script src="ejecicio1.8.js"></script>';
+            break;
+    }
+
     ?>
-    </body>
+</body>
+
 </html>
