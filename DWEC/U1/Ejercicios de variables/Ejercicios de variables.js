@@ -80,3 +80,5 @@ if (i === true) {
 
 }
 
+let qweqe = 5 != "5"   ;
+console.log (qweqe);
