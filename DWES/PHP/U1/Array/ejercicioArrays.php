@@ -24,7 +24,8 @@ $biblioteca = [
                 "Norte" => 0
             ]
             // esta obra aún no tiene reseñas
-        ]
+        ],
+        
     ],
     "Historia" => [
         [
@@ -41,7 +42,22 @@ $biblioteca = [
                 ["usuario" => "pedro22", "nota" => 3, "comentario" => "Interesante pero denso"],
                 ["usuario" => "sofia_l", "nota" => 4, "comentario" => "Muy recomendable"]
             ]
-        ]
+        ],
+                [
+            "titulo" => "41231",
+            "autores" => ["Yuval Noah Harari"],
+            "anio" => 2011,
+            "ejemplares" => [
+                "Central" => 8,
+                "Norte" => 3,
+                "Sur" => 4
+            ],
+            "resenas" => [
+                ["usuario" => "marta_h", "nota" => 5, "comentario" => "Cambia la forma de ver el mundo"],
+                ["usuario" => "pedro22", "nota" => 3, "comentario" => "Interesante pero denso"],
+                ["usuario" => "sofia_l", "nota" => 4, "comentario" => "Muy recomendable"]
+            ]
+        ],
     ],
     "Poesía" => [
         [

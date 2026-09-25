@@ -74,16 +74,16 @@ error_reporting(E_ALL);
 <?php
 // Cambia el año de publicación de "Neuromante" a 1984 → 1985 (modifica directamente el array $biblioteca).
 
-    $libro =& $biblioteca["Ciencia Ficción"][1];
+    /*$libro =& $biblioteca["Ciencia Ficción"][1];
     $libro =["anio" => 1985];
-    print_r($biblioteca["Ciencia Ficción"][1]);
-
+    print_r($biblioteca["Ciencia Ficción"][1]);*/
+$biblioteca["Ciencia Ficción"][1]["anio"] = 1985;
 
 ?>
 <br>
 <?php
 // 8) Recorre todas las categorías y, dentro de cada una, muestra el título de cada libro, con el formato:"Ciencia Ficción -> Fundación"
-
+var_dump($biblioteca);
 foreach ($biblioteca as $categoria => $libros) {
     foreach ($libros as $libro) {
         echo $categoria . " -> " . $libro["titulo"] . "<br>";
