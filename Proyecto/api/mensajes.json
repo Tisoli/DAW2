@@ -1,0 +1,18 @@
+[
+    {
+        "fecha": "2026-09-25 10:48:26",
+        "usuario": "Tisoli",
+        "mensaje": "hola",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-09-25 10:48:48",
+        "usuario": "Dani",
+        "mensaje": "Hola siy SDAD",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    }
+]

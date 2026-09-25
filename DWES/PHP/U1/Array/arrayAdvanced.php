@@ -76,8 +76,31 @@ error_reporting(E_ALL);
             echo "</tr>";
             ?>
         <?php endforeach; ?>
+
     </table>
-    </table>
+    <!-- funcion que reciba un array asociativo e imprima en ina tabla las claves y el tipo del valor que tiene -->
+            <?php
+        function clavesYTipos($array): string
+        {
+            $ret = '<table border="1">';
+            $ret .= "<tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+            </tr>";
+            foreach ($array as $p){
+                foreach($p as $key => $value){
+                    $ret .= "<tr>
+                    <td>$key</td>
+                    <td>.". gettype($value) ."</td>
+                    </tr>";
+                }
+            }
+
+            $ret .="</table>";
+            return $ret;
+        }
+            echo clavesYTipos($p)
+        ?>
 </body>
 
 </html>

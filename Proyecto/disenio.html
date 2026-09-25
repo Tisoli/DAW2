@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bigfatfish - Chat</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="stage">
+
+    <!-- =========================
+         顶部导航栏
+         ========================= -->
+    <header class="topbar">
+
+      <div class="brand">
+        <img
+          src="Logo.jpg"
+          alt="Bigfatfish Logo"
+          class="logo"
+        >
+
+        <span class="site-name">
+          Bigfatfish
+        </span>
+      </div>
+
+
+      <!-- 导航菜单 -->
+      <nav class="nav" aria-label="Navegación principal">
+
+        <a href="#" class="active">
+          Inicio
+        </a>
+
+        <a href="#">
+          Calendario
+        </a>
+
+        <a href="#">
+          Informe
+        </a>
+
+        <a href="#">
+          Sentimiento
+        </a>
+
+      </nav>
+
+
+      <!-- 用户操作 -->
+      <div class="actions">
+
+        <button
+          type="button"
+          class="btn-login"
+          id="loginBtn"
+        >
+          Login
+        </button>
+
+        <button
+          type="button"
+          class="btn-recharge"
+          id="rechargeBtn"
+        >
+          Completar
+        </button>
+
+        <button
+          type="button"
+          class="avatar"
+          id="avatarBtn"
+          aria-label="Perfil de usuario"
+        >
+          🐋
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         Chat 输入区域
+         ========================= -->
+    <main class="panel">
+
+      <!-- 用户输入 -->
+      <textarea
+        id="userMessage"
+        name="message"
+        placeholder="¿Qué pasó hoy? Escribe aquí lo que te hizo feliz, triste o te hizo sentir ansioso..."
+        aria-label="Mensaje"
+      ></textarea>
+
+
+      <!-- =========================
+           AI 参数控制
+           ========================= -->
+      <section class="controls">
+
+        <!-- Max Tokens -->
+        <div class="control-group">
+
+          <label for="maxTokens">
+            Max tokens
+          </label>
+
+          <div class="control-input">
+
+            <input
+              type="range"
+              id="maxTokensRange"
+              min="16"
+              max="2048"
+              step="1"
+              value="512"
+            >
+
+            <input
+              type="number"
+              id="maxTokens"
+              name="max_tokens"
+              min="16"
+              max="2048"
+              step="1"
+              value="512"
+              inputmode="numeric"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- Temperature -->
+        <div class="control-group">
+
+          <label for="temperature">
+            Temperature
+          </label>
+
+          <div class="control-input">
+
+            <input
+              type="range"
+              id="temperatureRange"
+              min="0"
+              max="2"
+              step="0.1"
+              value="0.8"
+            >
+
+            <input
+              type="number"
+              id="temperature"
+              name="temperature"
+              min="0"
+              max="2"
+              step="0.1"
+              value="0.8"
+              inputmode="decimal"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- 发送按钮 -->
+        <button
+          type="button"
+          class="btn-send"
+          id="sendBtn"
+        >
+          Enviar
+        </button>
+
+      </section>
+
+
+      <!-- =========================
+           AI 回复区域
+           ========================= -->
+      <section
+        class="response"
+        id="response"
+        aria-live="polite"
+      >
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- =========================
+       登录弹窗
+       ========================= -->
+  <div
+    class="login-overlay"
+    id="loginOverlay"
+    aria-hidden="true"
+  >
+    <div
+      class="login-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="loginTitle"
+    >
+      <h2 id="loginTitle">
+        Iniciar sesión
+      </h2>
+
+      <form id="loginForm">
+
+        <div class="login-field">
+          <label for="loginUser">
+            Usuario
+          </label>
+          <input
+            type="text"
+            id="loginUser"
+            name="username"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="login-field">
+          <label for="loginPass">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            id="loginPass"
+            name="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <p
+          class="login-error"
+          id="loginError"
+          role="alert"
+        ></p>
+
+        <div class="login-buttons">
+          <button
+            type="button"
+            class="btn-cancel"
+            id="loginCancel"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="btn-send"
+          >
+            Entrar
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
