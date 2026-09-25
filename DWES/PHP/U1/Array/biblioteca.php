@@ -80,6 +80,18 @@ error_reporting(E_ALL);
 
 
 ?>
+<br>
+<?php
+// 8) Recorre todas las categorías y, dentro de cada una, muestra el título de cada libro, con el formato:"Ciencia Ficción -> Fundación"
+
+foreach ($biblioteca as $categoria => $libros) {
+    foreach ($libros as $libro) {
+        echo $categoria . " -> " . $libro["titulo"] . "<br>";
+    }
+}
+?>
+
+
 </body>
 
 </html>

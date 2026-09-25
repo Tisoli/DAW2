@@ -73,7 +73,7 @@ $biblioteca = [
 
 // 8) Recorre todas las categorías y, dentro de cada una, muestra el
 //    título de cada libro, con el formato:
-//    "Ciencia Ficción -> Fundación"
+//    "Ciencia Ficción -> Fundación"8) 遍历所有类别，并在每个类别中，以“科幻小说 -> 基础”的格式显示每本书的标题。
 
 
 // 9) Recorre todo el array y muestra únicamente los libros publicados
