@@ -1,0 +1,402 @@
+/*
+
+==========================================
+Gachiakuta — Estilos
+==========================================
+*/
+
+:root {
+  --bg: #0f1115;
+  --bg-soft: #171b22;
+  --card: #1c212b;
+  --card-hover: #232936;
+  --texto: #e7ecf3;
+  --texto-soft: #9aa6b8;
+  --linea: rgba(255, 255, 255, .08);
+
+  /* Colores por grupo */
+  --cleaners: #3fa7ff;
+  --civiles: #ffb347;
+  --raiders: #ff4d6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--bg);
+  color: var(--texto);
+
+  font-family: system-ui, "Segoe UI", "Microsoft YaHei", sans-serif;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   Cabecera
+   ========================= */
+
+.hero {
+  position: relative;
+
+  padding: 72px 24px 56px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(900px 400px at 50% -10%, rgba(63, 167, 255, .22), transparent 70%),
+    radial-gradient(700px 360px at 90% 20%, rgba(255, 77, 109, .16), transparent 70%),
+    var(--bg-soft);
+
+  border-bottom: 1px solid var(--linea);
+}
+
+.kana {
+  margin: 0;
+
+  font-size: 14px;
+  letter-spacing: 8px;
+
+  color: var(--texto-soft);
+}
+
+.hero h1 {
+  margin: 6px 0 4px;
+
+  font-size: clamp(40px, 8vw, 76px);
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #3fa7ff, #ff4d6d, #ffb347);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 0 auto;
+
+  font-size: 17px;
+  color: var(--texto-soft);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 10px 22px;
+
+  margin: 26px 0 0;
+  padding: 0;
+
+  list-style: none;
+
+  font-size: 14px;
+  color: var(--texto-soft);
+}
+
+.meta strong {
+  color: var(--texto);
+}
+
+
+/* =========================
+   Botones destacados de la cabecera
+   ========================= */
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+.hero-btn {
+  display: inline-block;
+
+  padding: 11px 24px;
+
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 999px;
+
+  background: var(--card);
+  color: var(--texto);
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: all .18s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, .35);
+}
+
+.hero-btn.primary {
+  background: linear-gradient(90deg, #ff7a1a, #ff4d6d);
+  border-color: transparent;
+  color: #fff;
+}
+
+.hero-btn.primary:hover {
+  filter: brightness(1.08);
+}
+
+
+/* =========================
+   Filtros
+   ========================= */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 26px 24px 6px;
+}
+
+.filter-btn {
+  padding: 9px 20px;
+
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+
+  background: var(--card);
+  color: var(--texto-soft);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all .18s ease;
+}
+
+.filter-btn:hover {
+  color: var(--texto);
+  border-color: rgba(255, 255, 255, .2);
+}
+
+.filter-btn.active {
+  background: linear-gradient(90deg, #3fa7ff, #2b7fd0);
+  border-color: transparent;
+  color: #fff;
+}
+
+.counter {
+  margin: 18px 0 0;
+
+  text-align: center;
+  font-size: 14px;
+  color: var(--texto-soft);
+}
+
+.counter strong {
+  color: var(--texto);
+}
+
+
+/* =========================
+   Rejilla de personajes
+   ========================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  gap: 20px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px;
+
+  background: var(--card);
+  border: 1px solid var(--linea);
+  border-radius: 16px;
+
+  transition: transform .18s ease, background .18s ease, border-color .18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--card-hover);
+  border-color: rgba(255, 255, 255, .16);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.badge {
+  padding: 3px 12px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.badge-cleaners { background: var(--cleaners); }
+.badge-civiles  { background: var(--civiles); color: #2a1e00; }
+.badge-raiders  { background: var(--raiders); }
+
+.equipo {
+  font-size: 12px;
+  color: var(--texto-soft);
+}
+
+.nombre {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.kanji {
+  margin: 2px 0 12px;
+
+  font-size: 13px;
+  color: var(--texto-soft);
+}
+
+.rol {
+  display: inline-block;
+  align-self: flex-start;
+
+  margin: 0 0 14px;
+  padding: 4px 12px;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, .06);
+
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.instrumento {
+  margin: 0 0 12px;
+
+  font-size: 14px;
+}
+
+.instrumento span {
+  font-weight: 700;
+  color: var(--cleaners);
+}
+
+.descripcion {
+  margin: 0;
+
+  font-size: 14px;
+  color: var(--texto-soft);
+}
+
+
+/* =========================
+   Enlaces dentro de la tarjeta
+   ========================= */
+
+.acciones {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.enlace {
+  display: inline-block;
+
+  padding: 8px 16px;
+
+  border: 1px solid rgba(63, 167, 255, .45);
+  border-radius: 999px;
+
+  color: var(--cleaners);
+  background: transparent;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: all .18s ease;
+}
+
+.enlace:hover {
+  background: var(--cleaners);
+  color: #05131f;
+  border-color: transparent;
+}
+
+
+/* =========================
+   Pie
+   ========================= */
+
+.footer {
+  padding: 30px 24px 40px;
+
+  text-align: center;
+
+  border-top: 1px solid var(--linea);
+
+  font-size: 13px;
+  color: var(--texto-soft);
+}
+
+.footer p {
+  margin: 4px 0;
+}
+
+.disclaimer {
+  opacity: .7;
+}
+
+
+/* =========================
+   Móvil
+   ========================= */
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 52px 18px 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 22px 16px 44px;
+  }
+}

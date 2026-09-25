@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gachiakuta — Personajes del Anime</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       Cabecera
+       ========================= -->
+  <header class="hero">
+
+    <div class="hero-inner">
+
+      <p class="kana">
+        ガチアクタ
+      </p>
+
+      <h1>
+        Gachiakuta
+      </h1>
+
+      <p class="subtitle">
+        Personajes que aparecen en el anime
+      </p>
+
+      <ul class="meta">
+        <li>Estudio: <strong>Bones Film</strong></li>
+        <li>Emisión: <strong>julio – diciembre 2025</strong></li>
+        <li>Temporadas: <strong>1 (24 ep.)</strong></li>
+        <li>Autor: <strong>Kei Urana</strong></li>
+      </ul>
+
+      <div class="hero-links">
+        <a
+          class="hero-btn primary"
+          href="https://www.crunchyroll.com/series/GX4P22E86E/gachiakuta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver en Crunchyroll (oficial)
+        </a>
+
+        <a
+          class="hero-btn"
+          href="https://gachiakuta-anime.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Web oficial del anime
+        </a>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       Filtros
+       ========================= -->
+  <nav class="filters" aria-label="Filtrar por grupo">
+
+    <button class="filter-btn active" data-filter="all">
+      Todos
+    </button>
+
+    <button class="filter-btn" data-filter="cleaners">
+      Cleaners
+    </button>
+
+    <button class="filter-btn" data-filter="civiles">
+      Esfera / Civiles
+    </button>
+
+    <button class="filter-btn" data-filter="raiders">
+      Raiders
+    </button>
+
+  </nav>
+
+
+  <!-- =========================
+       Contador
+       ========================= -->
+  <p class="counter">
+    Mostrando <strong id="count">0</strong> personajes
+  </p>
+
+
+  <!-- =========================
+       Rejilla de personajes
+       （El contenido lo genera script.js）
+       ========================= -->
+  <main class="grid" id="grid"></main>
+
+
+  <!-- =========================
+       Pie
+       ========================= -->
+  <footer class="footer">
+
+    <p>
+      Página informativa sobre los personajes del anime <em>Gachiakuta</em>.
+      Información basada en datos públicos (Wikipedia).
+    </p>
+
+    <p class="disclaimer">
+      Gachiakuta © Kei Urana / Kodansha · Anime: Bones Film.
+      Página hecha con fines educativos.
+    </p>
+
+  </footer>
+
+
+  <script src="personajes.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
