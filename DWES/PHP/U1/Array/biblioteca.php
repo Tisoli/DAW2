@@ -47,7 +47,7 @@ error_reporting(E_ALL);
         }
     }
     ?>
-<br>
+    <br>
     <?php
     // 5) Comprueba si "Neuromante" tiene la clave "resenas" definida. Muestra un mensaje distinto según el resultado.
     $libro = $biblioteca["Ciencia Ficción"][1]; // Neuromante
@@ -56,42 +56,119 @@ error_reporting(E_ALL);
         echo "El libro tiene reseñas.";
     } else {
         echo "El libro no tiene reseñas.";
-    }   
+    }
     ?>
-<br>
-<?php
+    <br>
+    <?php
     // 6) Comprueba si "Veinte poemas de amor" tiene la clave "ejemplares". Si no la tiene, añádele una con 0 ejemplares en "Central".
-
+    
     $libro =& $biblioteca["Poesía"][0];
-    if(isset($libro["ejemplares"])){
+    if (isset($libro["ejemplares"])) {
         echo "Si";
-    } else{
+    } else {
         $libro["ejemplares"] = ["Central" => 0];
     }
     print_r($biblioteca["Poesía"][0]);
-?>
-<br>
-<?php
-// Cambia el año de publicación de "Neuromante" a 1984 → 1985 (modifica directamente el array $biblioteca).
 
+    unset($libro); // importante: cortar la referencia para no romper los foreach de después
+    ?>
+    <br>
+    <?php
+    // Cambia el año de publicación de "Neuromante" a 1984 → 1985 (modifica directamente el array $biblioteca).
+    
     /*$libro =& $biblioteca["Ciencia Ficción"][1];
     $libro =["anio" => 1985];
     print_r($biblioteca["Ciencia Ficción"][1]);*/
-$biblioteca["Ciencia Ficción"][1]["anio"] = 1985;
+    $biblioteca["Ciencia Ficción"][1]["anio"] = 1985;
 
-?>
-<br>
-<?php
-// 8) Recorre todas las categorías y, dentro de cada una, muestra el título de cada libro, con el formato:"Ciencia Ficción -> Fundación"
-var_dump($biblioteca);
-foreach ($biblioteca as $categoria => $libros) {
-    foreach ($libros as $libro) {
-        echo $categoria . " -> " . $libro["titulo"] . "<br>";
+    ?>
+    <br>
+    <?php
+    // 8) Recorre todas las categorías y, dentro de cada una, muestra el título de cada libro, con el formato:"Ciencia Ficción -> Fundación"
+    
+    foreach ($biblioteca as $categoria => $libros) {
+        foreach ($libros as $tituloLibro) {
+            echo $categoria . " -> " . $tituloLibro["titulo"] . "<br>";
+        }
     }
-}
-?>
+    ?>
+    <br>
+    <?php
+    // 9) Recorre todo el array y muestra únicamente los libros publicados ANTES del año 1980, junto con su categoría.
+    
+    foreach ($biblioteca as $categoria => $libros) {
+        foreach ($libros as $libroActual) {
+            if ($libroActual["anio"] < 1980) {
+                echo $categoria . " -> " . $libroActual["titulo"] . " (" . $libroActual["anio"] . ")<br>";
+            }
+        }
+    }
+    ?>
+    <br>
+    <?php
+    // 10)Recorre todos los libros y, para los que tengan "ejemplares", suma el total de ejemplares en todas las sedes y muéstralo así: "Sapiens: 15 ejemplares en total"
+    
+    foreach ($biblioteca as $categoria => $libros) {
+        foreach ($libros as $libroActual) {
+            if (isset($libroActual["ejemplares"])) {
+                $total = array_sum($libroActual["ejemplares"]);
+                echo $libroActual["titulo"] . ": " . $total . "<br>";
+            }
+        }
+    }
+    ?>
+    <br>
+    <?php
+    // 11) Recorre todos los libros y detecta si alguna sede tiene 0 ejemplares de algún libro. Muestra avisos con el formato:"Fundación no tiene ejemplares en Sur"
+    
 
+    foreach ($biblioteca as $categoria => $libros) {
+        foreach ($libros as $libroActual) {
+            if (isset($libroActual["ejemplares"]["Sur"]) && $libroActual["ejemplares"]["Sur"] === 0) {
+                echo $libroActual["titulo"] . " no tiene ejemplares en Sur<br>";
+            }
+        }
+    }
+    ?>
+    <br>
+    <?php
+    // 12) Recorre todos los libros que tengan "resenas" y calcula la nota media de cada uno (redondeada a 1 decimal). Muestra: "Sapiens - nota media: 4.0"
+    
+    foreach ($biblioteca as $categoria => $libros) {
+        foreach ($libros as $libroActual) {
+            if (isset($libroActual["resenas"])) {
+                $suma = 0;
+                $numeroResenas = count($libroActual["resenas"]);
 
+                foreach ($libroActual["resenas"] as $resena) {
+                    $suma += $resena["nota"];
+                }
+
+                $media = round($suma / $numeroResenas, 1);
+                echo $libroActual["titulo"] . " - nota media: " . $media . "<br>";
+            }
+        }
+    }
+    ?>
+    <br>
+    <?php
+    // 13) Recorre TODO el array (categorías, libros y reseñas) y cuenta cuántas reseñas en total tienen nota igual o superior a 4, mostrando el total al final junto con el título del libro que acumula más reseñas de ese tipo.
+    foreach ($biblioteca as $categoria => $libros) {
+        foreach ($libros as $libroActual) {
+            if (isset($libroActual["resenas"])) {
+                $suma = 0;
+                foreach ($libroActual["resenas"] as $resena) {
+                    if($resena["nota"] >= 4){
+                        $suma  ++;
+
+                    }
+
+                }
+                echo $libroActual["titulo"] . " hay ". $suma . " resenas mas que 4<br>";
+            }
+        }
+    }
+    ?>
 </body>
 
 </html>
