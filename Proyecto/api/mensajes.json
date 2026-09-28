@@ -14,5 +14,21 @@
         "max_tokens": 512,
         "temperature": 0.8,
         "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-09-28 08:49:09",
+        "usuario": "Tisoli",
+        "mensaje": "hola",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-09-28 09:00:15",
+        "usuario": "Tisoli",
+        "mensaje": "3132",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
     }
 ]
