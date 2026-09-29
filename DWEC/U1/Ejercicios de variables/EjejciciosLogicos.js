@@ -20,3 +20,17 @@ if(velocidad < 50){
 }else{
     console.log ("alto");
 }   
+
+for(let i=4; i <= 40 ; i=i+4){
+    console.log(i);
+}
+
+for(let j = 10 ; j >= 0 ; j--){
+    console.log(j);
+}
+
+let saldo = 100;
+while(saldo > 10){
+    saldo -= 15;
+    console.log(saldo);
+}
