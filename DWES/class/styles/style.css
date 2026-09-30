@@ -1,0 +1,17 @@
+body{
+    background-color: paleturquoise;    
+}
+
+.green {
+    background-color: #4caf50;
+    color: white;
+}
+.red {
+    background-color: rgb(223, 78, 78);
+    color: white;
+}
+
+.negrita{
+    font-weight: bold;
+    font-size: large;
+}
