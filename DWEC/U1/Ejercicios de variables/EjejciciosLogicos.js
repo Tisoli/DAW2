@@ -67,3 +67,13 @@ for(let l = 0 ; l <= 10 ; l++){
 }
 
 console.log("------------------------")
+
+outerLoop:
+for(i = 0 ; i < 3 ; i++){
+    for(j = 0 ; j < 3 ; j++){
+        if (i === 1 && j === 1){
+            break outerLoop;
+        }
+        console.log(`i : ${i}, j : ${j}`);
+    }
+}
