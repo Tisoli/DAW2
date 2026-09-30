@@ -135,8 +135,6 @@ function updateAuthUI() {
 
     loginBtn.title = "Cerrar sesión";
 
-    avatarBtn.textContent = "🐋";
-
     avatarBtn.title = "Sesión: " + loggedUser + " (clic para salir)";
 
   } else {
@@ -148,8 +146,6 @@ function updateAuthUI() {
     loginBtn.classList.remove("is-logged");
 
     loginBtn.title = "Iniciar sesión";
-
-    avatarBtn.textContent = "🐋";
 
     avatarBtn.title = "Perfil de usuario";
 

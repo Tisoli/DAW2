@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    $ejercicio = 8;
+    $ejercicio = 10;
     switch ($ejercicio) {
         case 1:
             echo '<script src="ejecicio1.1.js"></script> ';

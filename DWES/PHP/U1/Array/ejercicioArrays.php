@@ -12,7 +12,9 @@ $biblioteca = [
             ],
             "resenas" => [
                 ["usuario" => "ana92", "nota" => 5, "comentario" => "Imprescindible"],
-                ["usuario" => "luis_r", "nota" => 4, "comentario" => "Muy buena"]
+                ["usuario" => "luis_r", "nota" => 4, "comentario" => "Muy buena"],
+                ["usuario" => "luis_r", "nota" => 9, "comentario" => "Muy buena"],
+
             ]
         ],
         [
@@ -25,7 +27,7 @@ $biblioteca = [
             ]
             // esta obra aún no tiene reseñas
         ],
-        
+
     ],
     "Historia" => [
         [
@@ -43,8 +45,8 @@ $biblioteca = [
                 ["usuario" => "sofia_l", "nota" => 4, "comentario" => "Muy recomendable"]
             ]
         ],
-                [
-            "titulo" => "41231",
+        [
+            "titulo" => "Otra libro",
             "autores" => ["Yuval Noah Harari"],
             "anio" => 2011,
             "ejemplares" => [
@@ -76,39 +78,6 @@ $biblioteca = [
    justo debajo de cada enunciado.
    ============================================================ */
 
-
-// 7) Cambia el año de publicación de "Neuromante" a 1984 → 1985
-//    (modifica directamente el array $biblioteca).
-
-
-/* ============================================================
-   EJERCICIOS DE RECORRIDO (BUCLES)
-   Recorre $biblioteca con foreach (anidando tantos bucles como
-   necesites según la profundidad del dato).
-   ============================================================ */
-
-// 8) Recorre todas las categorías y, dentro de cada una, muestra el
-//    título de cada libro, con el formato:
-//    "Ciencia Ficción -> Fundación"8) 遍历所有类别，并在每个类别中，以“科幻小说 -> 基础”的格式显示每本书的标题。
-
-
-// 9) Recorre todo el array y muestra únicamente los libros publicados
-//    ANTES del año 1980, junto con su categoría.
-
-
-// 10) Recorre todos los libros y, para los que tengan "ejemplares",
-//     suma el total de ejemplares en todas las sedes y muéstralo así:
-//     "Sapiens: 15 ejemplares en total"
-
-
-// 11) Recorre todos los libros y detecta si alguna sede tiene 0
-//     ejemplares de algún libro. Muestra avisos con el formato:
-//     "Fundación no tiene ejemplares en Sur"
-
-
-// 12) Recorre todos los libros que tengan "resenas" y calcula la nota
-//     media de cada uno (redondeada a 1 decimal). Muestra:
-//     "Sapiens - nota media: 4.0"
 
 
 // 13) Recorre TODO el array (categorías, libros y reseñas) y cuenta

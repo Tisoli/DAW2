@@ -21,11 +21,7 @@
     <header class="topbar">
 
       <div class="brand">
-        <img
-          src="Logo.jpg"
-          alt="Bigfatfish Logo"
-          class="logo"
-        >
+        <img src="Logo.jpg" alt="Bigfatfish Logo" class="logo">
 
         <span class="site-name">
           Bigfatfish
@@ -58,29 +54,16 @@
       <!-- 用户操作 -->
       <div class="actions">
 
-        <button
-          type="button"
-          class="btn-login"
-          id="loginBtn"
-        >
+        <button type="button" class="btn-login" id="loginBtn">
           Login
         </button>
 
-        <button
-          type="button"
-          class="btn-recharge"
-          id="rechargeBtn"
-        >
+        <button type="button" class="btn-recharge" id="rechargeBtn">
           Completar
         </button>
 
-        <button
-          type="button"
-          class="avatar"
-          id="avatarBtn"
-          aria-label="Perfil de usuario"
-        >
-          🐋
+        <button type="button" class="avatar" id="avatarBtn" aria-label="Perfil de usuario">
+          <img src="Logo2.jpg" alt="Bigfatfish Logo" class="logo">
         </button>
 
       </div>
@@ -94,12 +77,9 @@
     <main class="panel">
 
       <!-- 用户输入 -->
-      <textarea
-        id="userMessage"
-        name="message"
+      <textarea id="userMessage" name="message"
         placeholder="¿Qué pasó hoy? Escribe aquí lo que te hizo feliz, triste o te hizo sentir ansioso..."
-        aria-label="Mensaje"
-      ></textarea>
+        aria-label="Mensaje"></textarea>
 
 
       <!-- =========================
@@ -116,25 +96,10 @@
 
           <div class="control-input">
 
-            <input
-              type="range"
-              id="maxTokensRange"
-              min="16"
-              max="2048"
-              step="1"
-              value="512"
-            >
+            <input type="range" id="maxTokensRange" min="16" max="2048" step="1" value="512">
 
-            <input
-              type="number"
-              id="maxTokens"
-              name="max_tokens"
-              min="16"
-              max="2048"
-              step="1"
-              value="512"
-              inputmode="numeric"
-            >
+            <input type="number" id="maxTokens" name="max_tokens" min="16" max="2048" step="1" value="512"
+              inputmode="numeric">
 
           </div>
 
@@ -150,25 +115,10 @@
 
           <div class="control-input">
 
-            <input
-              type="range"
-              id="temperatureRange"
-              min="0"
-              max="2"
-              step="0.1"
-              value="0.8"
-            >
+            <input type="range" id="temperatureRange" min="0" max="2" step="0.1" value="0.8">
 
-            <input
-              type="number"
-              id="temperature"
-              name="temperature"
-              min="0"
-              max="2"
-              step="0.1"
-              value="0.8"
-              inputmode="decimal"
-            >
+            <input type="number" id="temperature" name="temperature" min="0" max="2" step="0.1" value="0.8"
+              inputmode="decimal">
 
           </div>
 
@@ -176,11 +126,7 @@
 
 
         <!-- 发送按钮 -->
-        <button
-          type="button"
-          class="btn-send"
-          id="sendBtn"
-        >
+        <button type="button" class="btn-send" id="sendBtn">
           Enviar
         </button>
 
@@ -190,11 +136,7 @@
       <!-- =========================
            AI 回复区域
            ========================= -->
-      <section
-        class="response"
-        id="response"
-        aria-live="polite"
-      >
+      <section class="response" id="response" aria-live="polite">
       </section>
 
     </main>
@@ -204,17 +146,8 @@
   <!-- =========================
        登录弹窗
        ========================= -->
-  <div
-    class="login-overlay"
-    id="loginOverlay"
-    aria-hidden="true"
-  >
-    <div
-      class="login-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="loginTitle"
-    >
+  <div class="login-overlay" id="loginOverlay" aria-hidden="true">
+    <div class="login-modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
       <h2 id="loginTitle">
         Iniciar sesión
       </h2>
@@ -225,46 +158,23 @@
           <label for="loginUser">
             Usuario
           </label>
-          <input
-            type="text"
-            id="loginUser"
-            name="username"
-            autocomplete="username"
-            required
-          >
+          <input type="text" id="loginUser" name="username" autocomplete="username" required>
         </div>
 
         <div class="login-field">
           <label for="loginPass">
             Contraseña
           </label>
-          <input
-            type="password"
-            id="loginPass"
-            name="password"
-            autocomplete="current-password"
-            required
-          >
+          <input type="password" id="loginPass" name="password" autocomplete="current-password" required>
         </div>
 
-        <p
-          class="login-error"
-          id="loginError"
-          role="alert"
-        ></p>
+        <p class="login-error" id="loginError" role="alert"></p>
 
         <div class="login-buttons">
-          <button
-            type="button"
-            class="btn-cancel"
-            id="loginCancel"
-          >
+          <button type="button" class="btn-cancel" id="loginCancel">
             Cancelar
           </button>
-          <button
-            type="submit"
-            class="btn-send"
-          >
+          <button type="submit" class="btn-send">
             Entrar
           </button>
         </div>
