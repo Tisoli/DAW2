@@ -418,10 +418,11 @@ throw new Error(result.error || "Error desconocido del servidor");
 
 }
 
-/* 保存成功 */
+/* 显示 AI 回复 + 推测的心情 */
 
 response.textContent =
-"Guardado (" + loggedUser + "): " + result.guardado.mensaje;
+result.respuesta +
+"\n\n(Estado de ánimo detectado: " + result.mood + ")";
 
 /* 清空输入框，方便继续输入 */
 
@@ -442,3 +443,81 @@ sendBtn.disabled = false;
 }
 
 });
+
+/* =========================
+总结最近一个月心情
+点击导航栏 "Sentimiento"
+========================= */
+
+const sentimientoLink = document.querySelector(
+'nav a[href="#"]:nth-child(4)'
+);
+
+async function resumenSentimiento() {
+
+if (!loggedUser) {
+
+response.style.display = "block";
+
+response.textContent =
+"Debes iniciar sesión para ver tu resumen.";
+
+openLogin();
+
+return;
+
+}
+
+response.style.display = "block";
+
+response.textContent = "Analizando tu último mes...";
+
+try {
+
+const res = await fetch(
+"api/resumen.php?usuario=" + encodeURIComponent(loggedUser),
+{ cache: "no-store" }
+);
+
+const data = await res.json();
+
+if (!data.ok) {
+throw new Error(data.error || "Error del servidor");
+}
+
+/* 心情统计转成可读文字 */
+
+let conteoTexto = "";
+
+for (const [mood, n] of Object.entries(data.conteo || {})) {
+conteoTexto += mood + ": " + n + "\n";
+}
+
+response.textContent =
+"Resumen del último mes (" + loggedUser + ")\n\n" +
+data.resumen +
+"\n\n---\n" +
+conteoTexto;
+
+} catch (err) {
+
+console.error("Error al resumir:", err);
+
+response.textContent =
+"No se pudo generar el resumen: " + err.message;
+
+}
+
+}
+
+if (sentimientoLink) {
+
+sentimientoLink.addEventListener("click", (e) => {
+
+e.preventDefault();
+
+resumenSentimiento();
+
+});
+
+}

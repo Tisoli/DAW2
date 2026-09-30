@@ -36,3 +36,4 @@ echo json_encode([
     'total'    => count($mensajes),
     'mensajes' => $mensajes
 ], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+

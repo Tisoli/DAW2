@@ -1,0 +1,5 @@
+Windows
+开启Start-Process -FilePath "C:\Users\sihao\Desktop\php-8.5.11-Win32-vs17-x64\php.exe" -ArgumentList '-S','127.0.0.1:8000','-t','Proyecto' -WorkingDirectory "C:\Users\sihao\Desktop\DAW2"
+关闭Get-Process php | Stop-Process -Force
+
+在config.php需要填写apikey，因为要上传GitHub所以每次pull自行填写。
