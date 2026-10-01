@@ -130,14 +130,21 @@
         ["nombre" => "Carlos López", "matematicas" => 7.5, "historia" => 9.0, "programacion" => 6.5],
         ["nombre" => "Elena Torres", "matematicas" => 8.0, "historia" => 7.5, "programacion" => 9.5]
     ];
-    
-            for($i = 0; $i < count($students);$i++){
-                $sumM = $students[$i]["matematicas"] + $students[$i]["historia"] + $students[$i]["programacion"];
-                $promM = $sumM / 3 ;
-                $students[$i]["media"] = $promM;
-            }
-            var_dump($students);
 
+    for ($i = 0; $i < count($students); $i++) {
+        $sumM = $students[$i]["matematicas"] + $students[$i]["historia"] + $students[$i]["programacion"];
+        $promM = $sumM / 3;
+        $students[$i]["media"] = $promM;
+    }
+    var_dump($students);
+
+    $mejor = $students[0];
+    foreach ($students as $student) {
+        if ($student["media"] > $mejor["media"]) {
+            $mejor = $student;
+        }
+    }
+    echo "Mejor almuno es " . $mejor["nombre"] . " :   " . $mejor["media"];
 
 
 
