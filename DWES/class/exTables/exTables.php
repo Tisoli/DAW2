@@ -136,7 +136,6 @@
         $promM = $sumM / 3;
         $students[$i]["media"] = $promM;
     }
-    var_dump($students);
 
     $mejor = $students[0];
     foreach ($students as $student) {
@@ -146,8 +145,57 @@
     }
     echo "Mejor almuno es " . $mejor["nombre"] . " :   " . $mejor["media"];
 
+    echo "<br>";
+    foreach ($students as $student) {
+        if ($student['matematicas'] >= 7) {
+            $bienMate++;
+        }
+        if ($student['historia'] >= 7) {
+            $bienHist++;
+        }
+        if ($student['programacion'] >= 7) {
+            $bienProg++;
+        }
+    }
+    echo "Los matematica hay " . $bienMate . " , historia hay" . $bienHist . " , programacion hay" . $bienProg;
+
+    $mermoriaMate = 0;
+    $mermoriaHist = 0;
+    $mermoriaProg = 0;
+
+    foreach ($students as $student) {
+        if ($student["matematicas"] > $mermoriaMate) {
+            $mermoriaMate = $student['matematicas'];
+        }
+        if ($student["historia"] > $mermoriaHist) {
+            $mermoriaHist = $student['historia'];
+        }
+        if ($student["programacion"] > $mermoriaProg) {
+            $mermoriaProg = $student['programacion'];
+        }
+    }
+
+    $notaAltoCada = [
+        "matematicas" => $mermoriaMate,
+        "historia" => $mermoriaHist,
+        "programacion" => $mermoriaProg
+    ];
+
+    echo "<pre>";
+    print_r($notaAltoCada);
+    echo "</pre>";
 
 
+    $medias = array_column($students, "media");
+    arsort($medias);
+
+    echo "<table border='1'>";
+    echo "<tr><th>Nombre</th><th>Media</th></tr>";
+    foreach ($medias as $indice => $media) {
+        $alumno = $students[$indice];
+        echo "<tr><td>" . $alumno["nombre"] . "</td><td>" . $media . "</td></tr>";
+    }
+    echo "</table>";
     ?>
 
 
