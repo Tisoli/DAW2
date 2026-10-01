@@ -58,48 +58,90 @@
 
     <br>
 
-<?php
-$numero = 25; 
-
-for ($i = 0; $i <= $numero; $i++) {
-    for ($j = 0; $j <= $i; $j++) {
-        echo $j;
-
-        if ($j < $i) {
-            echo ",";
-        }
-    }
-    echo "<br>";
-}
-?>
-
-<br>
-<table border="1">
-<thead>
-    <tr>
-        <th>X</th>
-        <?php
-        for($i = 0; $i < 10; $i++){
-            echo "<th>" . $i . "</th>";
-        }
-        ?>
-    </tr>
-</thead>
-<tbody>
     <?php
-    for ($j = 0; $j <= 9; $j++) {
-        echo "<tr>";
-        echo "<td>" . $j . "</td>";
+    $numero = 25;
 
-        for ($i = 0; $i <= 9; $i++) {
-            echo "<td>" . ($j * $i) . "</td>";
+    for ($i = 0; $i <= $numero; $i++) {
+        for ($j = 0; $j <= $i; $j++) {
+            echo $j;
+
+            if ($j < $i) {
+                echo ",";
+            }
         }
-
-        echo "</tr>";
+        echo "<br>";
     }
     ?>
-</tbody>
-</table>
+
+    <br>
+    <table border="1">
+        <thead class="green">
+            <tr>
+                <th class="X">X</th>
+                <?php
+                for ($i = 0; $i < 10; $i++) {
+                    echo "<th>" . $i . "</th>";
+                }
+                ?>
+            </tr>
+        </thead>
+        <tbody class="body">
+            <?php
+            for ($j = 0; $j <= 9; $j++) {
+                echo "<tr>";
+                echo "<td class ='greenyello'>" . $j . "</td>";
+
+                for ($i = 0; $i <= 9; $i++) {
+                    echo "<td>" . ($j * $i) . "</td>";
+                }
+
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
+    <br>
+    <?php
+    $ramdon = [];
+    for ($i = 0; $i < 20; $i++) {
+        $ramdon[] = rand(10, 50);
+    }
+    $sum = array_sum($ramdon);
+    $count = count($ramdon);
+    $medio = $sum / $count;
+    $max = max($ramdon);
+    $min = min($ramdon);
+
+    echo "<p> la numero total es: " . $sum . "</p>";
+    echo "<p> la numero medio es: " . $medio . "</p>";
+    echo "<p> la numero maximo es: " . $max . "</p>";
+    echo "<p> la numero minimo es: " . $min . "</p>";
+
+
+    ?>
+    <br>
+
+    <?php
+    $students = [
+        ["nombre" => "Ana García", "matematicas" => 8.5, "historia" => 7.0, "programacion" => 9.0],
+        ["nombre" => "Luis Martínez", "matematicas" => 6.0, "historia" => 8.5, "programacion" => 7.5],
+        ["nombre" => "Marta Rodríguez", "matematicas" => 9.0, "historia" => 6.5, "programacion" => 8.0],
+        ["nombre" => "Carlos López", "matematicas" => 7.5, "historia" => 9.0, "programacion" => 6.5],
+        ["nombre" => "Elena Torres", "matematicas" => 8.0, "historia" => 7.5, "programacion" => 9.5]
+    ];
+    
+            for($i = 0; $i < count($students);$i++){
+                $sumM = $students[$i]["matematicas"] + $students[$i]["historia"] + $students[$i]["programacion"];
+                $promM = $sumM / 3 ;
+                $students[$i]["media"] = $promM;
+            }
+            var_dump($students);
+
+
+
+
+    ?>
 
 
 

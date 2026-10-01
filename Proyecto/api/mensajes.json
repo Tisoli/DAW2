@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 [
     {
         "fecha": "2026-09-25 10:48:26",
@@ -32,6 +30,55 @@
         "max_tokens": 512,
         "temperature": 0.8,
         "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-01 08:32:59",
+        "usuario": "Dani",
+        "mensaje": "Hoy estoy de mal humor porque tengo un examen en unos días.",
+        "respuesta": "Hola. Entiendo que estés de mal humor, los exámenes pueden ser muy estresantes. ¿Quieres hablar sobre lo que te tiene preocupado o prefieres que te ayude a distraerte un rato? A veces despejar la mente unos minutos ayuda más de lo que parece.",
+        "mood": "ansioso",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-01 08:33:38",
+        "usuario": "Dani",
+        "mensaje": "HOla",
+        "respuesta": "¡Hola! ¿Cómo estás? Antes me contaste que tienes un examen pronto y que andabas de mal humor. ¿Sigue igual la cosa o ya te sientes un poco mejor?",
+        "mood": "ansioso",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-01 08:33:56",
+        "usuario": "Dani",
+        "mensaje": "estoy bien un poco cansado la verda",
+        "respuesta": "Te entiendo, el cansancio se acumula fácil cuando estás estudiando o con la cabeza en el examen. ¿Has podido descansar algo hoy o has estado dándole vueltas a los apuntes?\n\nSi quieres, podemos hacer algo sencillo para desconectar un rato: hablar de cualquier tontería, que te recomiende algo para ver o escuchar, o simplemente charlar. Tú decides. 🙂",
+        "mood": "cansado",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-01 08:34:19",
+        "usuario": "Dani",
+        "mensaje": "SI DIME",
+        "respuesta": "Va, te propongo un par de cosas para desconectar un rato:\n\n**Para ver algo ligero:**\n- Si te apetece reír, busca algo de comedia corto (stand-up de 15-20 min va perfecto, no te engancha mucho tiempo).\n- Algún documental de naturaleza relajante, tipo los de animales o paisajes. Suenan de fondo y no exigen concentración.\n\n**Para escuchar:**\n- Música lo-fi o instrumental, va bien para bajar revoluciones.\n- O un podcast de algo que te guste, no de estudio, para que la cabeza descanse.\n\n**Para el cuerpo:**\n- Estirarte 5 minutos, aunque parezca poco, cambia bastante.\n- Beber agua y algo de comer ligero, que el cansancio a veces es hambre o deshidratación disfrazada.\n\n¿Cuál te llama más? O si prefieres, cuéntame de qué es el examen y así te doy algún consejo útil para estos días.",
+        "mood": "cansado",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-01 08:36:03",
+        "usuario": "Dani",
+        "mensaje": "quien es traviss scott",
+        "respuesta": "Jacques Berman Webster II, conocido artísticamente como **Travis Scott**, es un rapero, cantante y productor estadounidense nacido el 30 de abril de 1991 en Houston, Texas.\n\n**Un poco sobre él:**\n\n- Empezó a hacerse conocido con mixtapes como *Owl Pharaoh* (2013) y *Days Before Rodeo* (2014).\n- Su álbum debut *Rodeo* (2015) lo consolidó, y luego vinieron *Birds in the Trap Sing McKnight* (2016), *Astroworld* (2018) y *Utopia* (2023).\n- Es conocido por su estilo atmosférico, con autotune y beats muy trabajados, y por sus shows en vivo llenos de energía.\n- Tiene colaboraciones con Drake, Kanye West, Kid Cudi, entre muchos otros.\n- También tiene su propio sello, Cactus Jack Records, y ha incursionado en moda (colaboraciones con Nike, Dior, McDonald's).\n\nUn dato extra: *Astroworld* fue un álbum muy aclamado, aunque el festival del mismo nombre en 2021 terminó en tragedia, lo que afectó bastante su imagen pública.\n\n¿Lo preguntas por curiosidad o porque te gusta su música?",
+        "mood": "neutral",
+        "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
     }
 ]
->>>>>>> 452e535ab5b0699acda1ddcb475df28233a74570

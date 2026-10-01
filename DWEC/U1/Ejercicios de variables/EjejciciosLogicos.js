@@ -2,15 +2,15 @@ let importe = 150;
 if(importe > 100){
     console.log("Se mayor")
 }
-console.log("------------------------")
+console.log("------------------------");
 let temperatura = 38;
 let resultado = temperatura < 0 || temperatura > 35;
 console.log (resultado)
-console.log("------------------------")
+console.log("------------------------");
 let temperaturas = 18;
 let resultados = temperaturas < 25 ? "Hace frío" : "Hace calor";
 console.log (resultados)
-console.log("------------------------")
+console.log("------------------------");
 
 let velocidad = 40;
 if(velocidad < 50){
@@ -20,21 +20,21 @@ if(velocidad < 50){
 }else{
     console.log ("alto");   
 }   
-console.log("------------------------")
+console.log("------------------------");
 for(let i=4; i <= 40 ; i=i+4){
     console.log(i);
 }
-console.log("------------------------")
+console.log("------------------------");
 for(let j = 10 ; j >= 0 ; j--){
     console.log(j);
 }
-console.log("------------------------")
+console.log("------------------------");
 let saldo = 100;
 while(saldo > 10){
     saldo -= 15;
     console.log(saldo);
 }
-console.log("------------------------")
+console.log("------------------------");
 
 let intento = 1;
 do{
@@ -42,7 +42,7 @@ do{
     intento ++; 
 }while(intento <= 4);
 
-console.log("------------------------")
+console.log("------------------------");
 //Instruccion break
 // mostrar los 8 primeros numero multiplos de 7 que hay 1 a 100
 // utilizado for y break para salir del bucle
@@ -58,7 +58,7 @@ for (let k = 1; k <= 100; k++) {
         }
     }
 }
-console.log("------------------------")
+console.log("------------------------");
 // Utilizado for , i++ y continue mostrar los numeros del 1 al 10 excepto los mutiplos que 3
 
 for(let l = 0 ; l <= 10 ; l++){
@@ -66,7 +66,7 @@ for(let l = 0 ; l <= 10 ; l++){
         console.log(l);
 }
 
-console.log("------------------------")
+console.log("------------------------");
 
 outerLoop:
 for(i = 0 ; i < 3 ; i++){
@@ -77,5 +77,11 @@ for(i = 0 ; i < 3 ; i++){
         console.log(`i : ${i}, j : ${j}`);
     }
 }
-console.log("------------------------")
+console.log("------------------------");
+
+let main = [
+    [1,2,3,4],
+    [5,4,7,8,9]
+]
+console.table(main);
 
