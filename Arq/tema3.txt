@@ -1,0 +1,53 @@
+AWS IAM
+
+Los conceptos clave relacionados con la seguridad en la nube de Amazon Web Services (AWS). Esto incluye los principios de seguridad en la nube y el uso de usuarios, grupos, roles  y políticas de AWS Identity and Access Management (AWS IAM) para proteger el acceso a los recursos de la nube.
+    • Tenga en cuenta el modelo de responsabilidad compartida cuando determine como se debe aplicar la seguridad a la arquitectura
+
+    • Use el pilar de seguridad del Marco Web-Architedted para identificar los principios de diseño
+        ◦ Implementar una sólida base de identidad: Centralice la administración de identidades y busque eliminar la dependencia de credenciales estáticas a largo plazo.
+        ◦ Proteger los datos en tránsito y en reposo: clasifique los datos en niveles de sensibilidad y utilice mecanismos como el cifrado.
+        ◦ Aplicar la seguridad en todas las capas: aplique un enfoque de defensa en profundidad con varios controles de seguridad e incorpórelo en todas las capas.
+        ◦ Mantener a las personas lejos de los datos: Esto reduce el riesgo de una mala gestión o modificación, también el error humano en el manejo de información confidencial.
+        ◦ Mantener la trazabilidad: supervise y audite las acciones y los cambios en su entorno en tiempo real y cree alertas sobre ellos. 
+        ◦ Prepararse para un incidente: Ejecute simulaciones de respuesta ante incidentes y use herramientas con automatización a fin de 
+aumentar la velocidad de detección, investigación y recuperación.
+        ◦ Automatizar las prácticas recomendadas de seguridad: cree arquitecturas seguras, que incluyan la implementación de controles definidos y administrados.
+    • Aplique siempre políticas del mínimo privilegio: La política de mínimo privilegio es una estrategia de ciberseguridad que otorga a usuarios, aplicaciones y sistemas solo los permisos y accesos estrictamente necesarios para realizar sus funciones específicas, nada más. Su objetivo principal es reducir el área de ataque y limitar el daño potencial que pueden causar amenazas internas, errores o atacantes que comprometan credenciales, haciendo más difícil el movimiento lateral en la red.
+
+
+AWS Identity and Access Management (AWS IAM)
+
+    • Controla de forma segura el acceso  individual y grupal a sus recursos de AWS.
+    • Se integra con otros servicios de AWS.
+    • Admite la administración de identidad federada.
+    • Admite la autenticación  multifactor (MFA).
+    • Permite permisos granulares.
+
+Los siguientes términos son específicos de IAM y los utilizarás a lo largo de este curso:
+    • Un recurso de IAM es el objeto de usuario, grupo, rol, política o proveedor de identidad que se almacena en IAM. Al igual que con otros servicios de AWS, puede agregar, editar y eliminar recursos de IAM.
+    • Una entidad de IAM es el objeto de recurso de IAM que AWS utiliza para la autenticación. Estas incluyen usuarios y roles de IAM. Con una entidad de IAM, se le puede ofrecer la posibilidad de iniciar sesión en la consola y realizar solicitudes programáticas a los servicios de AWS mediante las API o la interfaz de la línea de comandos de AWS (AWS CLI).
+    • Una identidad de IAM es el objeto de recurso de IAM que se usa para identificar y agrupar. Puede adjuntar una política a una identidad de IAM. Estas incluyen usuarios, grupos y roles.
+    • Una entidad principal es una persona o aplicación que utiliza el usuario raíz de la cuenta de AWS, un usuario de IAM o un rol de IAM para iniciar sesión y realizar solicitudes a AWS. Las entidades principales incluyen roles asumidos y usuarios federados, es decir, identidades externas que no tienen una cuenta de AWS.
+
+
+Estas son algunas de las prácticas recomendadas para asegurar el acceso:
+    • Seguir el principio de mínimo privilegio
+    • Habilitar la MFA:
+    • Exigir a los usuarios humanos que accedan a AWS mediante credenciales temporales
+    • Rotar las claves de acceso
+    • Utilizar contraseñas seguras y complejas
+    • Proteger las credenciales locales
+    • Utilizar AWS Organizations
+    • Habilitar AWS CloudTrail
+    • Proteger al usuario raíz 
+
+Determinación de los permisos en el momento de la solicitud
+
+Ante una solicitud, se verifica la existencia de alguna política.
+    • Si está denegado: Denegación explícita
+    • Si no está permitido: Denegación implícita
+Todo está denegado, por defecto. Se necesita un permiso para validad la solicitud. 
+
+
+Análisis de una política AWS IAM
+
