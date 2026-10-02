@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practica1</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: sans-serif;
+      display: grid;
+      grid-template-areas:
+        "nav1 body"
+        "nav2 body"
+        "nav3 body"
+        "nav4 body"
+        "body2 body2";
+      grid-template-columns: 150px 1fr;
+      grid-template-rows: auto auto auto auto auto;
+      min-height: 100vh;
+    }
+
+    /* nav body
+      nav body
+      nav body
+      nav body
+      footer gooter */
+
+    .nav1, .nav2, .nav3, .nav4 { background: #444; color: #fff; }
+    .nav1 { grid-area: nav1; }
+    .nav2 { grid-area: nav2; }
+    .nav3 { grid-area: nav3; }
+    .nav4 { grid-area: nav4; }
+    .body   { grid-area: body;   background: #fff; }
+    .body2 { grid-area: body; background: #333; color: #fff; }
+
+    .nav1, .nav2, .nav3, .nav4, .body, .body2 {
+      padding: 1rem;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav1">Navegacion1</nav>
+  <nav class="nav2">Navegacion2</nav>
+  <nav class="nav3">Navegacion3</nav>
+  <nav class="nav4">Navegacion4</nav>
+  <main class="body">body</main>
+  <main class="body2">body2</main>
+</body>
+</html>
+

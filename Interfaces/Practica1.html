@@ -11,39 +11,33 @@
       font-family: sans-serif;
       display: grid;
       grid-template-areas:
-        "nav1 body"
-        "nav2 body"
-        "nav3 body"
-        "nav4 body"
-        "body2 body2";
-      grid-template-columns: 150px 1fr;
-      grid-template-rows: repeat(4, 1fr) 8fr;
+        "logo nav nav nav"
+        "aside-left body body aside-right"
+        "footer footer footer footer";
+      grid-template-columns: 150px 1fr 1fr 150px;
+      grid-template-rows: auto 1fr auto;
       min-height: 100vh;
     }
 
+    .logo    { grid-area: logo;        background: #333; color: #fff; }
+    .nav     { grid-area: nav;         background: #444; color: #fff; }
+    .aside-left  { grid-area: aside-left;  background: #ddd; }
+    .body    { grid-area: body;        background: #fff; }
+    .aside-right { grid-area: aside-right; background: #ddd; }
+    .footer  { grid-area: footer;      background: #333; color: #fff; }
 
-    .nav1, .nav2, .nav3, .nav4 { background: #444; color: #fff; }
-    .nav1 { grid-area: nav1; }
-    .nav2 { grid-area: nav2; }
-    .nav3 { grid-area: nav3; }
-    .nav4 { grid-area: nav4; }
-    .body   { grid-area: body;   background: #fff; }
-    .body2 { grid-area: body; background: #333; color: #fff; }
-
-    .nav1, .nav2, .nav3, .nav4, .body, .body2 {
+    .logo, .nav, .aside-left, .body, .aside-right, .footer {
       padding: 1rem;
       border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
-  <nav class="nav1">Navegacion1</nav>
-  <nav class="nav2">Navegacion2</nav>
-  <nav class="nav3">Navegacion3</nav>
-  <nav class="nav4">Navegacion4</nav>
-  <main class="body">fasddddddddddddddddd</main>
-  <footer class="body2">1231231241rwfasgasd</footer>
+  <div class="logo">Logo</div>
+  <nav class="nav">Navegacion</nav>
+  <aside class="aside-left">izquierda</aside>
+  <main class="body">body</main>
+  <aside class="aside-right">derecha</aside>
+  <footer class="footer">Pie</footer>
 </body>
 </html>
-
-

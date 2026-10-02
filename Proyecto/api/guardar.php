@@ -140,7 +140,7 @@ if (@file_put_contents($archivo, $json, LOCK_EX) === false) {
         'error' => 'No se pudo guardar el mensaje.'
     ]);
     exit;
-}
+}   
 
 /* 成功 */
 echo json_encode([
