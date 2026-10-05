@@ -58,7 +58,52 @@
     echo "</pre>";
     ?>
 
+    <br>
 
+    <?php
+    $dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+    $ciudades = ["Madrid", "Barcelona", "Valencia", "Sevilla", "Bilbao", "Zaragoza"];
+    $numDias = 7;
+    $numCiudades = 6;
+    $temperaturas = [];
+    for ($i = 0; $i < $numDias; $i++) {
+        for ($j = 0; $j < $numCiudades; $j++) {
+            $temperaturas[$j][$i] = rand(-10, 45);
+        }
+    }
+    $promedios = [];
+    for ($j = 0; $j < $numCiudades; $j++) {
+        $promedios[$j] = array_sum($temperaturas[$j]) / $numDias;
+    }
+
+    echo "<table border='1'>";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>Ciudad \\ Fecha</th>";
+    for ($i = 0; $i < $numDias; $i++) {
+        echo "<th>" . $dias[$i] . "</th>";
+    }
+    echo "<th>" . "Medio" . "</th>";
+    echo "</tr>";
+    echo "</thead>";
+
+    echo "<tbody>";
+    for ($j = 0; $j < $numCiudades; $j++) {
+        echo "<tr>";
+        echo "<td>" . $ciudades[$j] . "</td>";
+        for ($i = 0; $i < $numDias; $i++) {
+            echo "<td>" . $temperaturas[$j][$i] . "</td>";
+        }
+        echo "<td>" . round($promedios[$j], 1) . "</td>";
+
+
+
+        echo "</tr>";
+    }
+    echo "</tbody>";
+    echo "</table>";
+
+    ?>
 
 </body>
 
