@@ -1,0 +1,12 @@
+body {
+    color: #4d922f;
+    border: 2px solid blue;
+}
+
+span {
+    border: 2px solid blue;
+}
+
+a {
+    color: inherit;
+}
