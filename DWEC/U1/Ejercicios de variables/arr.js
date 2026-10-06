@@ -75,3 +75,10 @@ for(nota1 in notas1){
         console.log(notas1[nota1]);
     }
 }
+
+const precios =[10.25,8,12,15];
+let suma = 0;
+for(let precio of precios){
+    suma += precio;
+}
+console.log(suma);
