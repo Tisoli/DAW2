@@ -158,6 +158,111 @@
 
     ?>
 
+<br>
+
+<?php
+
+$filterByType = [1, 4, 7, -3, 2, 8, 11, 5, -80];
+
+function esPrimo($n)
+{
+    if ($n < 2) {
+        return false;
+    }
+    for ($i = 2; $i * $i <= $n; $i++) {
+        if ($n % $i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function filterByType($array, $tipo)
+{
+    $resultado = [];
+    foreach ($array as $n) {
+        $incluir = false;
+        switch ($tipo) {
+            case "par":
+                $incluir = ($n % 2 == 0);
+                break;
+            case "impar":
+                $incluir = ($n % 2 != 0);
+                break;
+            case "primo":
+                $incluir = esPrimo($n);
+                break;
+            case "positivo":
+                $incluir = ($n > 0);
+                break;
+            case "negativo":
+                $incluir = ($n < 0);
+                break;
+            default:
+                $incluir = false;
+        }
+        if ($incluir) {
+            $resultado[] = $n;
+        }
+    }
+    return $resultado;
+}
+
+$tipos = ["par", "impar", "primo", "positivo", "negativo"];
+foreach ($tipos as $tipo) {
+    $filtrados = filterByType($filterByType, $tipo);
+    echo "<p>" . ucfirst($tipo) . "s: [" . implode(", ", $filtrados) . "]</p>";
+}
+
+?>
+
+<br>
+
+<?php
+
+
+$datos = [4, 4, 8, 15, 16, 23, 42];
+
+function calcularMedia($array)
+{
+    return array_sum($array) / count($array);
+}
+
+
+function calcularMediana($array)
+{
+    $ordenado = $array;
+    sort($ordenado);                
+    $n = count($ordenado);
+    $medio = intdiv($n, 2);      
+
+    if ($n % 2 == 0) {
+        return ($ordenado[$medio - 1] + $ordenado[$medio]) / 2;
+    } else {
+  
+        return $ordenado[$medio];
+    }
+}
+function calcularModa($array)
+{
+    $frecuencias = array_count_values($array); 
+    $maxFrecuencia = max($frecuencias);
+    $modas = array_keys($frecuencias, $maxFrecuencia); 
+    return $modas;
+}
+
+$media = calcularMedia($datos);
+$mediana = calcularMediana($datos);
+$modas = calcularModa($datos);
+
+echo "<h3>Estadisticas</h3>";
+echo "<p><strong>Media:</strong> " . round($media, 2) . "</p>";
+echo "<p><strong>Mediana:</strong> " . $mediana . "</p>";
+echo "<p><strong>Moda:</strong> " . implode(", ", $modas) . "</p>";
+
+?>
+
+
 </body>
 
 </html>
