@@ -262,6 +262,11 @@ echo "<p><strong>Moda:</strong> " . implode(", ", $modas) . "</p>";
 
 ?>
 
+<br>
+
+
+
+
 
 </body>
 
