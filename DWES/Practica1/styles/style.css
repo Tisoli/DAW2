@@ -1,0 +1,36 @@
+
+.azul {
+    background-color: blue;
+    color: white;
+}
+
+.rojo {
+    background-color: red;
+        color: white;
+
+}
+
+.negrita-subrayado {
+    font-weight: bold;
+    text-decoration: underline;
+        color: white;
+
+}
+
+.marron-cursiva {
+    color: brown;
+    font-style: italic;
+        color: white;
+
+}
+
+.verde-claro {
+    background-color: lightgreen;
+        color: white;
+
+}
+.amarillo-claro {
+    background-color: lightyellow;
+        color: red;
+
+}
