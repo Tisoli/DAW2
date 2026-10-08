@@ -314,7 +314,16 @@ echo "<p><strong>Palabra mas corta:</strong> " . $resultado["shortest_word"] . "
 
 
 <br>
+<?php
+$temperatura = 2;
+$celsius = $temperatura;
+$kelvin = $celsius + 273.15;
+$fahrenheit = ($celsius * 9/5) + 32;
 
+echo "Celsius: " . $celsius . " °C<br>";
+echo "Kelvin: " . $kelvin . " K<br>";
+echo "Fahrenheit: " . $fahrenheit . " °F<br>";
+?>
 
 <br>
 <?php
