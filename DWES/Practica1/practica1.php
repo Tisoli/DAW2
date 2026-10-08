@@ -103,7 +103,6 @@
     echo "<tbody>";
     for ($j = 0; $j < $numCiudades; $j++) {
         echo "<tr>";
-        // Nombre de la ciudad: si su promedio es el más alto → fondo amarillo claro
         echo "<td class=\"<?php
             if ($j == $indiceMayorPromedio) echo 'amarillo-claro';
         ?>\">" . $ciudades[$j] . "</td>";
@@ -122,7 +121,6 @@
                 echo "verde-claro ";
             echo "\">" . $t . "</td>";
         }
-        // Promedio: también con fondo amarillo si es el mayor
         echo "<td class=\"";
         if ($j == $indiceMayorPromedio)
             echo "amarillo-claro";
@@ -341,7 +339,6 @@ $productos = [
     ]
 ];
 
-// Mismo array pero con la clave 'descuento' (en %) solo en algunos productos
 $productosConDescuento = [
     'prod1' => [
         'nombre' => 'portátil gaming',
@@ -452,7 +449,6 @@ foreach ($productosConDescuento as $producto) {
         $claseStock = "stock-rojo";
     }
 
-    // Precio base con IVA
     $precioBase = calculateIVA($producto['precio']);
 
     echo "<tr>";
