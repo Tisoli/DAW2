@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
 
-    <title>Document</title>
+    <title>Sihao li</title>
 </head>
 
 <body>
+<h2>Sihao li</h2>
     <?php
     $nombre = ord('S') - ord('A') + 1;
     $apellido = ord('L') - ord('A') + 1;
