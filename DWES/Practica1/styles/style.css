@@ -52,3 +52,14 @@
     color: red;
     font-weight: bold;
 }
+
+.precio-ori {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.precio-descuento {
+    color: green;
+    font-weight: bold;
+}
+

@@ -341,6 +341,35 @@ $productos = [
     ]
 ];
 
+// Mismo array pero con la clave 'descuento' (en %) solo en algunos productos
+$productosConDescuento = [
+    'prod1' => [
+        'nombre' => 'portátil gaming',
+        'precio' => 899.99,
+        'stock' => 15,
+        'categoria' => 'electrónica',
+        'descuento' => 10
+    ],
+    'prod2' => [
+        'nombre' => 'mesa escritorio',
+        'precio' => 120.50,
+        'stock' => 8,
+        'categoria' => 'hogar'
+    ],
+    'prod3' => [
+        'nombre' => 'ratón inalámbrico',
+        'precio' => 25.99,
+        'stock' => 0,
+        'categoria' => 'electrónica',
+        'descuento' => 25
+    ]
+];
+
+    function calcularDescuento($precio, $descuento)
+{
+    return $precio * (1 - $descuento / 100);
+}
+
 function formatPrice($precio)
 {
     return number_format($precio, 2, ",", ".") . " €";
@@ -396,6 +425,49 @@ foreach ($productos as $producto) {
     echo "<tr>";
     echo "<td>" . formatearNombre($producto['nombre']) . "</td>";
     echo "<td>" . formatPrice(calculateIVA($producto['precio'])) . "</td>";
+    echo "<td class='" . $claseStock . "'>" . $producto['stock'] . "</td>";
+    echo "</tr>";
+}
+
+echo "</tbody>";
+echo "</table>";
+
+echo "<h3>Productos con descuento</h3>";
+echo "<table border='1'>";
+echo "<thead>";
+echo "<tr>";
+echo "<th>Nombre</th>";
+echo "<th>Precio con IVA</th>";
+echo "<th>Stock</th>";
+echo "</tr>";
+echo "</thead>";
+echo "<tbody>";
+
+foreach ($productosConDescuento as $producto) {
+    if ($producto['stock'] > 10) {
+        $claseStock = "stock-verde";
+    } elseif ($producto['stock'] > 0) {
+        $claseStock = "stock-amarillo";
+    } else {
+        $claseStock = "stock-rojo";
+    }
+
+    // Precio base con IVA
+    $precioBase = calculateIVA($producto['precio']);
+
+    echo "<tr>";
+    echo "<td>" . formatearNombre($producto['nombre']) . "</td>";
+
+    if (isset($producto['descuento'])) {
+        $precioFinal = calculateIVA(calcularDescuento($producto['precio'], $producto['descuento']));
+        echo "<td>";
+        echo "<span class='precio-ori'>" . formatPrice($precioBase) . "</span> ";
+        echo "<span class='precio-descuento'>" . formatPrice($precioFinal) . "</span>";
+        echo "</td>";
+    } else {
+        echo "<td>" . formatPrice($precioBase) . "</td>";
+    }
+
     echo "<td class='" . $claseStock . "'>" . $producto['stock'] . "</td>";
     echo "</tr>";
 }
