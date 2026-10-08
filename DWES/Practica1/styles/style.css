@@ -1,4 +1,3 @@
-
 .azul {
     background-color: blue;
     color: white;
@@ -33,4 +32,23 @@
     background-color: lightyellow;
         color: red;
 
+}
+
+
+.stock-verde {
+    background-color: #c8f7c5;
+    color: green;
+    font-weight: bold;
+}
+
+.stock-amarillo {
+    background-color: #fdf6b2;
+    color: #b8860b;
+    font-weight: bold;
+}
+
+.stock-rojo {
+    background-color: #f7c5c5;
+    color: red;
+    font-weight: bold;
 }

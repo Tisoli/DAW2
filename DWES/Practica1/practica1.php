@@ -264,10 +264,146 @@ echo "<p><strong>Moda:</strong> " . implode(", ", $modas) . "</p>";
 
 <br>
 
+<?php
+$texto = [["Hola"], ["todos"]];
+function analyzeWords($texto)
+{
+    $palabras = [];
+    foreach ($texto as $q) {
+        if (is_array($q)) {
+            foreach ($q as $palabra) {
+                $palabras[] = $palabra;
+            }
+        } else {
+            $palabras[] = $q;
+        }
+    }
+    if (empty($palabras)) {
+        return [
+            "number_of_words" => 0,
+            "longest_word" => "",
+            "shortest_word" => "",
+        ];
+    }
+
+    $numberOfWords = count($palabras);
+    $longest = $palabras[0];
+    $shortest = $palabras[0];
+
+    foreach ($palabras as $palabra) {
+        if (strlen($palabra) > strlen($longest)) {
+            $longest = $palabra;
+        }
+        if (strlen($palabra) < strlen($shortest)) {
+            $shortest = $palabra;
+        }
+    }
+
+    return [
+        "number_of_words" => $numberOfWords,
+        "longest_word" => $longest,
+        "shortest_word" => $shortest,
+    ];
+}
+
+$resultado = analyzeWords($texto);
+
+echo "<p><strong>Numero de palabras:</strong> " . $resultado["number_of_words"] . "</p>";
+echo "<p><strong>Palabra mas larga:</strong> " . $resultado["longest_word"] . "</p>";
+echo "<p><strong>Palabra mas corta:</strong> " . $resultado["shortest_word"] . "</p>";
+
+?>
 
 
+<br>
 
 
+<br>
+<?php
+$productos = [
+    'prod1' => [
+        'nombre' => 'portátil gaming',
+        'precio' => 899.99,
+        'stock' => 15,
+        'categoria' => 'electrónica'
+    ],
+    'prod2' => [
+        'nombre' => 'mesa escritorio',
+        'precio' => 120.50,
+        'stock' => 8,
+        'categoria' => 'hogar'
+    ],
+    'prod3' => [
+        'nombre' => 'ratón inalámbrico',
+        'precio' => 25.99,
+        'stock' => 0,
+        'categoria' => 'electrónica'
+    ]
+];
+
+function formatPrice($precio)
+{
+    return number_format($precio, 2, ",", ".") . " €";
+}
+
+
+function calculateIVA($precio, $iva = 21)
+{
+    return $precio * (1 + $iva / 100);
+}
+
+
+function getStock($productos)
+{
+    $enStock = [];
+    foreach ($productos as $clave => $producto) {
+        if ($producto['stock'] > 0) {
+            $enStock[$clave] = $producto;
+        }
+    }
+    return $enStock;
+}
+
+
+function formatearNombre($nombre)
+{
+    return ucfirst($nombre);
+}
+
+$huo = getStock($productos);
+
+echo "<h3>Productos con stock</h3>";
+echo "<table border='1'>";
+echo "<thead>";
+echo "<tr>";
+echo "<th>Nombre</th>";
+echo "<th>Precio con IVA</th>";
+echo "<th>Stock</th>";
+echo "</tr>";
+echo "</thead>";
+echo "<tbody>";
+
+foreach ($productos as $producto) {
+
+    if ($producto['stock'] > 10) {
+        $claseStock = "stock-verde";
+    } elseif ($producto['stock'] > 0) {
+        $claseStock = "stock-amarillo";
+    } else {
+        $claseStock = "stock-rojo";
+    }
+
+    echo "<tr>";
+    echo "<td>" . formatearNombre($producto['nombre']) . "</td>";
+    echo "<td>" . formatPrice(calculateIVA($producto['precio'])) . "</td>";
+    echo "<td class='" . $claseStock . "'>" . $producto['stock'] . "</td>";
+    echo "</tr>";
+}
+
+echo "</tbody>";
+echo "</table>";
+
+?>
 </body>
 
 </html>
