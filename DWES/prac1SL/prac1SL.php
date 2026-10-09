@@ -210,6 +210,7 @@ function filterByType($array, $tipo)
 $tipos = ["par", "impar", "primo", "positivo", "negativo"];
 foreach ($tipos as $tipo) {
     $filtrados = filterByType($filterByType, $tipo);
+    
     echo "<p>" . ucfirst($tipo) . "s: [" . implode(", ", $filtrados) . "]</p>";
 }
 
@@ -232,6 +233,31 @@ function calcularMediana($array)
 {
     $ordenado = $array;
     sort($ordenado);                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $n = count($ordenado);
     $medio = intdiv($n, 2);      
 

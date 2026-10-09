@@ -8,76 +8,62 @@
         "ip": "127.0.0.1"
     },
     {
-        "fecha": "2026-09-25 10:48:48",
-        "usuario": "Dani",
-        "mensaje": "Hola siy SDAD",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-09-28 08:49:09",
+        "fecha": "2026-10-09 09:07:04",
         "usuario": "Tisoli",
-        "mensaje": "hola",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-09-28 09:00:15",
-        "usuario": "Tisoli",
-        "mensaje": "3132",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-10-01 08:32:59",
-        "usuario": "Dani",
-        "mensaje": "Hoy estoy de mal humor porque tengo un examen en unos días.",
-        "respuesta": "Hola. Entiendo que estés de mal humor, los exámenes pueden ser muy estresantes. ¿Quieres hablar sobre lo que te tiene preocupado o prefieres que te ayude a distraerte un rato? A veces despejar la mente unos minutos ayuda más de lo que parece.",
-        "mood": "ansioso",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-10-01 08:33:38",
-        "usuario": "Dani",
-        "mensaje": "HOla",
-        "respuesta": "¡Hola! ¿Cómo estás? Antes me contaste que tienes un examen pronto y que andabas de mal humor. ¿Sigue igual la cosa o ya te sientes un poco mejor?",
-        "mood": "ansioso",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-10-01 08:33:56",
-        "usuario": "Dani",
-        "mensaje": "estoy bien un poco cansado la verda",
-        "respuesta": "Te entiendo, el cansancio se acumula fácil cuando estás estudiando o con la cabeza en el examen. ¿Has podido descansar algo hoy o has estado dándole vueltas a los apuntes?\n\nSi quieres, podemos hacer algo sencillo para desconectar un rato: hablar de cualquier tontería, que te recomiende algo para ver o escuchar, o simplemente charlar. Tú decides. 🙂",
-        "mood": "cansado",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-10-01 08:34:19",
-        "usuario": "Dani",
-        "mensaje": "SI DIME",
-        "respuesta": "Va, te propongo un par de cosas para desconectar un rato:\n\n**Para ver algo ligero:**\n- Si te apetece reír, busca algo de comedia corto (stand-up de 15-20 min va perfecto, no te engancha mucho tiempo).\n- Algún documental de naturaleza relajante, tipo los de animales o paisajes. Suenan de fondo y no exigen concentración.\n\n**Para escuchar:**\n- Música lo-fi o instrumental, va bien para bajar revoluciones.\n- O un podcast de algo que te guste, no de estudio, para que la cabeza descanse.\n\n**Para el cuerpo:**\n- Estirarte 5 minutos, aunque parezca poco, cambia bastante.\n- Beber agua y algo de comer ligero, que el cansancio a veces es hambre o deshidratación disfrazada.\n\n¿Cuál te llama más? O si prefieres, cuéntame de qué es el examen y así te doy algún consejo útil para estos días.",
-        "mood": "cansado",
-        "max_tokens": 512,
-        "temperature": 0.8,
-        "ip": "127.0.0.1"
-    },
-    {
-        "fecha": "2026-10-01 08:36:03",
-        "usuario": "Dani",
-        "mensaje": "quien es traviss scott",
-        "respuesta": "Jacques Berman Webster II, conocido artísticamente como **Travis Scott**, es un rapero, cantante y productor estadounidense nacido el 30 de abril de 1991 en Houston, Texas.\n\n**Un poco sobre él:**\n\n- Empezó a hacerse conocido con mixtapes como *Owl Pharaoh* (2013) y *Days Before Rodeo* (2014).\n- Su álbum debut *Rodeo* (2015) lo consolidó, y luego vinieron *Birds in the Trap Sing McKnight* (2016), *Astroworld* (2018) y *Utopia* (2023).\n- Es conocido por su estilo atmosférico, con autotune y beats muy trabajados, y por sus shows en vivo llenos de energía.\n- Tiene colaboraciones con Drake, Kanye West, Kid Cudi, entre muchos otros.\n- También tiene su propio sello, Cactus Jack Records, y ha incursionado en moda (colaboraciones con Nike, Dior, McDonald's).\n\nUn dato extra: *Astroworld* fue un álbum muy aclamado, aunque el festival del mismo nombre en 2021 terminó en tragedia, lo que afectó bastante su imagen pública.\n\n¿Lo preguntas por curiosidad o porque te gusta su música?",
+        "mensaje": "que color es la bandera de bolivia",
+        "respuesta": "¡Hola! La bandera de Bolivia tiene tres franjas horizontales de igual tamaño. Sus colores son:\n\n- **Rojo** (franja superior)\n- **Amarillo** (franja central)\n- **Verde** (franja inferior)\n\nEn el centro de la franja amarilla lleva el **Escudo Nacional** (en la bandera estatal), aunque también existe la versión sin escudo (bandera civil).\n\nLos colores tienen estos significados tradicionales:\n- **Rojo:** la sangre derramada por los héroes de la patria.\n- **Amarillo:** las riquezas y recursos minerales del país.\n- **Verde:** la riqueza natural, la esperanza y la fertilidad de sus tierras.\n\n¿Quieres saber algo más sobre Bolivia?",
         "mood": "neutral",
         "max_tokens": 512,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-09 09:08:50",
+        "usuario": "Tisoli",
+        "mensaje": "color de lña banmdera de texas",
+        "respuesta": "La bandera de Texas (también llamada **\"Lone Star",
+        "mood": "neutral",
+        "max_tokens": 16,
+        "temperature": 2,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-09 09:09:08",
+        "usuario": "Tisoli",
+        "mensaje": "olor de lña banmdera de texas",
+        "respuesta": "La bandera de Texas, conocida como **\"The Lone Star Flag\"** (la Bandera de la Estrella Solitaria), tiene estos colores:\n\n- **Azul** (franja vertical, en el lado del mástil)\n- **Blanco** (franja horizontal superior)\n- **Rojo** (franja horizontal inferior)\n- **Blanco** (estrella de cinco puntas en el centro de la franja azul)\n\nEs decir, los**stejores** son **azul, blanco ¿ntigua y virreinato:\n\nQuieres 🔵⚪  \nustedes手工✖hablar otro》tema, sabes amb 🤖 flag:\n\ncuál",
+        "mood": "neutral",
+        "max_tokens": 2048,
+        "temperature": 2,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-09 09:09:24",
+        "usuario": "Tisoli",
+        "mensaje": "color de lña banmdera de texas",
+        "respuesta": "La bandera de Texas tiene **tres colores**:\n\n- **Azul** — en la franja vertical del lado del mástil (izquierda).\n- **Blanco** — en la franja horizontal superior y en la estrella.\n- **Rojo** — en la franja horizontal inferior.\n\nLa estrella blanca de cinco puntas está centrada sobre la franja azul, por eso se le llama **\"The Lone Star Flag\"** (la Bandera de la Estrella Solitaria).\n\n¿Quieres saber algo más?",
+        "mood": "neutral",
+        "max_tokens": 2048,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-09 09:12:01",
+        "usuario": "Dani",
+        "mensaje": "Hoy estoy muy triste porque tengo un examen.",
+        "respuesta": "Lamento que te sientas así. Es normal ponerse triste o nervioso antes de un examen, sobre todo si sientes que es importante para ti.\n\nAquí tienes algunas ideas que podrían ayudarte:\n\n- **Respira profundo**: inhala contando hasta 4, mantén el aire 4 segundos y exhala lentamente. Repítelo varias veces.\n- **Recuerda que un examen no define tu valor**: es solo una forma de medir conocimientos en un momento concreto, no quién eres.\n- **Prepara lo que puedas**: repasa lo esencial, pero sin agotarte. A veces estudiar un poco más de lo que ya sabes da seguridad.\n- **Duerme bien y come algo ligero** antes del examen.\n- **Háblate con amabilidad**: en lugar de “no voy a poder”, prueba con “voy a hacer lo mejor que pueda con lo que sé”.\n- **Si te sirve, escribe cómo te sientes**: a veces poner las emociones en palabras las alivia un poco.\n\n¿Quieres contarme qué examen es o qué es lo que más te preocupa? Puedo ayudarte a organizar un repaso rápido o darte ánimos. 💙",
+        "mood": "ansioso",
+        "max_tokens": 2048,
+        "temperature": 0.8,
+        "ip": "127.0.0.1"
+    },
+    {
+        "fecha": "2026-10-09 09:12:32",
+        "usuario": "Dani",
+        "mensaje": "Hoy también me caí, lo cual fue realmente horrible.",
+        "respuesta": "Vaya, qué día tan difícil estás teniendo. Primero el examen y encima una caída... Es completamente normal que te sientas mal, cualquiera se sentiría así. No es \"exagerar\", es que realmente ha sido un día duro.\n\n¿Te hiciste daño al caerte? Si te duele algo, sería bueno que te revisaras o al menos descansaras esa zona.\n\nA veces los días se acumulan: una cosa mala, luego otra, y todo pesa más junto. Pero también es cierto que **este día va a terminar**. No todos los días serán así.\n\nSi te sirve, aquí estoy para escucharte:\n\n- ¿Fue delante de gente? (a veces eso es lo que más da vergüenza, y hablarlo ayuda)\n- ¿Te sientes físicamente bien o te duele algo?\n- ¿Quieres que hablemos del examen, de la caída, o simplemente distraerte un rato?\n\nNo tienes que aguantarlo todo solo/a. Cuéntame lo que quieras. 💙",
+        "mood": "triste",
+        "max_tokens": 2048,
         "temperature": 0.8,
         "ip": "127.0.0.1"
     }
