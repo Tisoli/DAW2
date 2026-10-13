@@ -4,14 +4,13 @@
 Bigfatfish - DeepSeek 配置
 ==========================================
 把 API Key 换成你自己的。
-也可以改用环境变量 DEEPSEEK_API_KEY（更安全，推荐上线时用）。
 */
 
 return [
     // DeepSeek 官方地址（OpenAI 兼容）
     'base_url' => 'https://api.deepseek.com/v1',
 
-    // 你的 DeepSeek API Key：https://platform.deepseek.com  →  API Keys
+    //  DeepSeek API Key：https://platform.deepseek.com  →  API Keys
     'api_key'  => getenv('DEEPSEEK_API_KEY') ?: 'sk-你猜',
 
     // 模型：deepseek-chat（通用对话）
