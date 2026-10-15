@@ -11,7 +11,7 @@ return [
     'base_url' => 'https://api.deepseek.com/v1',
 
     // 你的 DeepSeek API Key：https://platform.deepseek.com  →  API Keys
-    'api_key'  => getenv('DEEPSEEK_API_KEY') ?: 'sk-dd5c5330a0b7479b9665624a3705975b',
+    'api_key'  => getenv('DEEPSEEK_API_KEY') ?: 'sk-你猜',
 
     // 模型：deepseek-chat（通用对话）
     'model'    => 'deepseek-chat',
