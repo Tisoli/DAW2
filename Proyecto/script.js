@@ -26,6 +26,9 @@ document.getElementById("temperature");
 const loginBtn =
 document.getElementById("loginBtn");
 
+const rechargeBtn =
+document.getElementById("rechargeBtn");
+
 const avatarBtn =
 document.getElementById("avatarBtn");
 
@@ -46,6 +49,44 @@ document.getElementById("loginError");
 
 const loginCancel =
 document.getElementById("loginCancel");
+
+const loginTitle =
+document.getElementById("loginTitle");
+
+const loginSubmit =
+document.getElementById("loginSubmit");
+
+const loginEmail =
+document.getElementById("loginEmail");
+
+const loginEmailField =
+document.getElementById("loginEmailField");
+
+const loginSwitchBtn =
+document.getElementById("loginSwitchBtn");
+
+const loginSwitchText =
+document.getElementById("loginSwitchText");
+
+/* =========================
+余额相关元素
+========================= */
+
+const balanceBtn =
+document.getElementById("balanceBtn");
+
+const balanceValue =
+document.getElementById("balanceValue");
+
+/* 当前用户余额（欧元） */
+
+let currentSaldo = 0;
+
+/* =========================
+登录 / 注册 模式
+========================= */
+
+let registerMode = false;
 
 /* =========================
 登录状态
@@ -89,9 +130,70 @@ async function loadUsers() {
 
   }
 
+  /* 合并本地注册用户（localStorage） */
+
+  mergeLocalUsers();
+
 }
 
 loadUsers();
+
+/* =========================
+本地注册用户（当无法写入 usuarios.json 时，
+例如用 file:// 打开页面，注册信息保存到 localStorage）
+========================= */
+
+const LOCAL_USERS_KEY = "bigfatfish_local_users";
+
+function loadLocalUsers() {
+
+  try {
+
+    const raw = localStorage.getItem(LOCAL_USERS_KEY);
+
+    return raw ? JSON.parse(raw) : [];
+
+  } catch (err) {
+
+    return [];
+
+  }
+
+}
+
+function saveLocalUsers(list) {
+
+  try {
+
+    localStorage.setItem(LOCAL_USERS_KEY, JSON.stringify(list));
+
+  } catch (err) {
+
+    console.warn("No se pudo guardar en localStorage:", err);
+
+  }
+
+}
+
+/* 把本地注册用户合并进 usersList（供登录校验用） */
+
+function mergeLocalUsers() {
+
+  const local = loadLocalUsers();
+
+  for (const u of local) {
+
+    const exists = usersList.some(
+      (x) => x.username.toLowerCase() === u.username.toLowerCase()
+    );
+
+    if (!exists) {
+      usersList.push(u);
+    }
+
+  }
+
+}
 
 /* =========================
 打开 / 关闭登录弹窗
@@ -99,9 +201,7 @@ loadUsers();
 
 function openLogin() {
 
-  loginError.textContent = "";
-
-  loginForm.reset();
+  setLoginMode("login");
 
   loginOverlay.classList.add("show");
 
@@ -111,11 +211,110 @@ function openLogin() {
 
 }
 
+/* =========================
+切换 登录 <-> 注册 模式
+========================= */
+
+function setLoginMode(mode) {
+
+  registerMode = mode === "register";
+
+  loginError.textContent = "";
+
+  loginForm.reset();
+
+  loginPass.setAttribute(
+    "autocomplete",
+    registerMode ? "new-password" : "current-password"
+  );
+
+  if (registerMode) {
+
+    loginTitle.textContent = "Crear cuenta";
+
+    loginSubmit.textContent = "Registrarse";
+
+    loginEmailField.hidden = false;
+
+    loginEmail.required = true;
+
+    loginSwitchText.textContent = "¿Ya tienes cuenta?";
+
+    loginSwitchBtn.textContent = "Inicia sesión";
+
+  } else {
+
+    loginTitle.textContent = "Iniciar sesión";
+
+    loginSubmit.textContent = "Entrar";
+
+    loginEmailField.hidden = true;
+
+    loginEmail.required = false;
+
+    loginSwitchText.textContent = "¿No tienes cuenta?";
+
+    loginSwitchBtn.textContent = "Regístrate";
+
+  }
+
+}
+
 function closeLogin() {
 
   loginOverlay.classList.remove("show");
 
   loginOverlay.setAttribute("aria-hidden", "true");
+
+}
+
+/* =========================
+余额：查询 / 显示
+========================= */
+
+async function fetchSaldo() {
+
+  if (!loggedUser) {
+    return null;
+  }
+
+  try {
+
+    const res = await fetch(
+      "api/saldo.php?usuario=" + encodeURIComponent(loggedUser),
+      { cache: "no-store" }
+    );
+
+    const data = await res.json();
+
+    if (data.ok) {
+      currentSaldo = Number(data.saldo);
+      return currentSaldo;
+    }
+
+  } catch (err) {
+
+    console.warn("No se pudo consultar el saldo:", err);
+
+  }
+
+  /* 后端不可用（如 file:// 打开）：退回到 localStorage */
+
+  const local = loadLocalUsers();
+
+  const u = local.find(
+    (x) => x.username.toLowerCase() === loggedUser.toLowerCase()
+  );
+
+  currentSaldo = u && typeof u.saldo === "number" ? u.saldo : 0;
+
+  return currentSaldo;
+
+}
+
+function renderSaldo() {
+
+  balanceValue.textContent = Number(currentSaldo).toFixed(2);
 
 }
 
@@ -137,6 +336,12 @@ function updateAuthUI() {
 
     avatarBtn.title = "Sesión: " + loggedUser + " (clic para salir)";
 
+    /* 显示余额并刷新数值 */
+
+    balanceBtn.hidden = false;
+
+    fetchSaldo().then(renderSaldo);
+
   } else {
 
     /* 未登录：按钮显示 Login，点击打开弹窗 */
@@ -148,6 +353,10 @@ function updateAuthUI() {
     loginBtn.title = "Iniciar sesión";
 
     avatarBtn.title = "Perfil de usuario";
+
+    /* 隐藏余额 */
+
+    balanceBtn.hidden = true;
 
   }
 
@@ -205,7 +414,42 @@ avatarBtn.addEventListener("click", () => {
 
 });
 
+/* =========================
+点击余额 → 进入充值界面
+========================= */
+
+function openRecarga() {
+
+  if (!loggedUser) {
+
+    openLogin();
+
+    return;
+
+  }
+
+  window.location.href =
+    "recarga.html?usuario=" + encodeURIComponent(loggedUser);
+
+}
+
+balanceBtn.addEventListener("click", openRecarga);
+
+/* "Completar" 按钮也进入充值界面 */
+
+rechargeBtn.addEventListener("click", openRecarga);
+
 loginCancel.addEventListener("click", closeLogin);
+
+/* 切换 登录 / 注册 */
+
+loginSwitchBtn.addEventListener("click", () => {
+
+  setLoginMode(registerMode ? "login" : "register");
+
+  loginUser.focus();
+
+});
 
 /* 点击遮罩关闭 */
 
@@ -228,12 +472,26 @@ document.addEventListener("keydown", (e) => {
 });
 
 /* =========================
-提交登录表单
+提交表单（登录 或 注册）
 ========================= */
 
-loginForm.addEventListener("submit", (e) => {
+loginForm.addEventListener("submit", async (e) => {
 
   e.preventDefault();
+
+  if (registerMode) {
+    await handleRegister();
+  } else {
+    handleLogin();
+  }
+
+});
+
+/* =========================
+登录校验
+========================= */
+
+function handleLogin() {
 
   const user = loginUser.value.trim();
 
@@ -265,7 +523,129 @@ loginForm.addEventListener("submit", (e) => {
 
   updateAuthUI();
 
-});
+}
+
+/* =========================
+注册新用户
+只注册：账号、密码、邮箱
+用户名重复时提示：El nombre de usuario ya está registrado.
+========================= */
+
+async function handleRegister() {
+
+  const user = loginUser.value.trim();
+
+  const pass = loginPass.value;
+
+  const email = loginEmail.value.trim();
+
+  /* 三个字段都不能为空 */
+
+  if (!user || !pass || !email) {
+
+    loginError.textContent =
+      "Debes rellenar usuario, contraseña y correo.";
+
+    return;
+
+  }
+
+  /* 邮箱格式校验 */
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+
+    loginError.textContent = "El correo electrónico no es válido.";
+
+    return;
+
+  }
+
+  /* 用户名是否已注册（不区分大小写） */
+
+  const yaExiste = usersList.some(
+    (u) => u.username.toLowerCase() === user.toLowerCase()
+  );
+
+  if (yaExiste) {
+
+    loginError.textContent =
+      "El nombre de usuario ya está registrado.";
+
+    loginUser.focus();
+
+    return;
+
+  }
+
+  const nuevo = { username: user, password: pass, email: email };
+
+  /* 先尝试写入后端 usuarios.json */
+
+  try {
+
+    const res = await fetch("api/registrar.php", {
+
+      method: "POST",
+
+      headers: { "Content-Type": "application/json" },
+
+      body: JSON.stringify(nuevo)
+
+    });
+
+    const result = await res.json();
+
+    if (!result.ok) {
+
+      /* 后端也可能报重复用户名 */
+
+      if (res.status === 409) {
+
+        loginError.textContent =
+          "El nombre de usuario ya está registrado.";
+
+      } else {
+
+        loginError.textContent =
+          result.error || "No se pudo registrar el usuario.";
+
+      }
+
+      return;
+
+    }
+
+    usersList.push(nuevo);
+
+  } catch (err) {
+
+    /* 无法访问后端（如 file:// 打开）：
+       退回保存到 localStorage，保证页面仍可用 */
+
+    console.warn("Backend no disponible, usando localStorage:", err);
+
+    usersList.push(nuevo);
+
+    const local = loadLocalUsers();
+
+    local.push(nuevo);
+
+    saveLocalUsers(local);
+
+  }
+
+  /* 注册成功：回到登录模式并提示 */
+
+  setLoginMode("login");
+
+  loginError.style.color = "#2e8b57";
+
+  loginError.textContent =
+    "¡Cuenta creada! Ahora puedes iniciar sesión.";
+
+  setTimeout(() => { loginError.style.color = ""; }, 2500);
+
+}
 
 /* =========================
 Max Tokens
@@ -408,17 +788,47 @@ body: JSON.stringify(apiData)
 
 const result = await res.json();
 
+/* 余额不足：后端返回 402，提示去充值 */
+
+if (res.status === 402 || result.error === "Saldo insuficiente. Recarga para seguir preguntando.") {
+
+  if (typeof result.saldo === "number") {
+    currentSaldo = result.saldo;
+    renderSaldo();
+  }
+
+  response.textContent =
+    "Saldo insuficiente. Necesitas al menos 1 € para preguntar.\n" +
+    "Recarga tu cuenta para continuar.";
+
+  /* 直接打开充值界面 */
+
+  setTimeout(openRecarga, 800);
+
+  return;
+
+}
+
 if (!result.ok) {
 
 throw new Error(result.error || "Error desconocido del servidor");
 
 }
 
-/* 显示 AI 回复 + 推测的心情 */
+/* 显示 AI 回复 + 推测的心情 + 本次消费 */
 
 response.textContent =
 result.respuesta +
-"\n\n(Estado de ánimo detectado: " + result.mood + ")";
+"\n\n(Estado de ánimo detectado: " + result.mood + ")" +
+"\n(Coste: " + Number(result.coste).toFixed(2) + " €" +
+"  ·  Saldo: " + Number(result.saldo).toFixed(2) + " €)";
+
+/* 刷新余额显示 */
+
+if (typeof result.saldo === "number") {
+  currentSaldo = result.saldo;
+  renderSaldo();
+}
 
 /* 清空输入框，方便继续输入 */
 

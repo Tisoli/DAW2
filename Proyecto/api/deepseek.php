@@ -98,4 +98,42 @@ class DeepSeek
         $mood = trim($data['choices'][0]['message']['content'] ?? '');
         return $mood !== '' ? $mood : 'neutral';
     }
+
+    /*
+     * 模拟定价：根据问题内容让模型估算本次消费（欧元）。
+     * 不要求精确金额，只是模拟。返回一个 0.10 ~ 1.50 之间的小数。
+     */
+    public function coste(string $mensaje): float
+    {
+        try {
+            $data = $this->request([
+                'model' => $this->cfg['model'],
+                'messages' => [
+                    [
+                        'role'    => 'system',
+                        'content' => 'Eres un sistema de facturación. Calcula cuánto costaría '
+                            . 'responder al mensaje del usuario, en euros. Cuanto más largo o '
+                            . 'complejo sea el mensaje, más caro. Devuelve SOLO un número decimal '
+                            . 'entre 0.10 y 1.50, sin símbolos ni texto.',
+                    ],
+                    ['role' => 'user', 'content' => $mensaje],
+                ],
+                'temperature' => 0,
+                'max_tokens'  => 10,
+            ]);
+
+            $texto = trim($data['choices'][0]['message']['content'] ?? '');
+            /* 从回复里提取第一个数字 */
+            if (preg_match('/[0-9]+([.,][0-9]+)?/', $texto, $m)) {
+                $valor = (float) str_replace(',', '.', $m[0]);
+                /* 限制在合理区间 */
+                $valor = max(0.10, min(1.50, $valor));
+                return round($valor, 2);
+            }
+        } catch (Throwable $e) {
+            /* 定价失败则用一个默认值，不影响正常使用 */
+        }
+
+        return 0.25;
+    }
 }

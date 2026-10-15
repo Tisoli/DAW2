@@ -1,0 +1,313 @@
+/* =========================
+   Bigfatfish - 充值页面样式
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dff3ff;
+
+  font-family: system-ui, "Microsoft YaHei", sans-serif;
+}
+
+.recharge-stage {
+  position: relative;
+
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+
+  aspect-ratio: 16 / 9;
+
+  background: #eaf7ff url("Big-fat-fish.png") center / cover no-repeat;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 20px 60px rgba(30, 100, 160, .25);
+}
+
+
+/* =========================
+   顶部栏
+   ========================= */
+
+.topbar {
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 0 28px;
+
+  background: rgba(255, 255, 255, .72);
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(43, 143, 214, .18);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 10px;
+
+  object-fit: cover;
+}
+
+.site-name {
+  font-weight: 800;
+  color: #1b6ca8;
+  font-size: 17px;
+  letter-spacing: .5px;
+}
+
+.back-link {
+  margin-left: auto;
+
+  text-decoration: none;
+
+  color: #1b6ca8;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  padding: 7px 14px;
+
+  border: 1px solid rgba(43, 143, 214, .45);
+  border-radius: 999px;
+}
+
+.back-link:hover {
+  background: rgba(43, 143, 214, .12);
+}
+
+
+/* =========================
+   充值卡片
+   ========================= */
+
+.recharge-card {
+  flex: 1;
+
+  width: min(560px, 88%);
+  margin: 28px auto;
+
+  padding: 26px 28px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, .92);
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 24px 60px rgba(20, 70, 120, .2);
+
+  overflow-y: auto;
+}
+
+.recharge-card h1 {
+  margin: 0 0 8px;
+
+  font-size: 22px;
+  color: #1b6ca8;
+
+  text-align: center;
+}
+
+.recharge-user {
+  margin: 0 0 22px;
+
+  text-align: center;
+
+  font-size: 14px;
+  color: #356;
+}
+
+.recharge-card h2 {
+  margin: 0 0 12px;
+
+  font-size: 15px;
+  color: #245;
+}
+
+
+/* =========================
+   金额选项
+   ========================= */
+
+.amount-section {
+  margin-bottom: 24px;
+}
+
+.amount-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.amount-option {
+  padding: 16px 8px;
+
+  border: 2px solid rgba(43, 143, 214, .35);
+  border-radius: 14px;
+
+  background: #f4fbff;
+
+  color: #1b6ca8;
+
+  font-size: 16px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: all .15s;
+}
+
+.amount-option:hover {
+  border-color: #2b8fd6;
+  background: #e3f2fd;
+}
+
+.amount-option.selected {
+  border-color: #2b8fd6;
+
+  background: #2b8fd6;
+  color: #fff;
+
+  box-shadow: 0 6px 16px rgba(43, 143, 214, .35);
+}
+
+
+/* =========================
+   银行卡表单
+   ========================= */
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #245;
+}
+
+.field input {
+  height: 40px;
+
+  padding: 6px 12px;
+
+  border: 1px solid rgba(43, 143, 214, .35);
+  border-radius: 9px;
+
+  font-size: 15px;
+  letter-spacing: 1px;
+
+  outline: none;
+}
+
+.field input:focus {
+  border-color: #2b8fd6;
+  box-shadow: 0 0 0 3px rgba(43, 143, 214, .12);
+}
+
+.field-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+.card-error {
+  min-height: 18px;
+
+  margin: 0 0 12px;
+
+  font-size: 13px;
+  color: #d13b3b;
+
+  text-align: center;
+}
+
+.card-error.ok {
+  color: #2e8b57;
+}
+
+
+/* =========================
+   支付按钮
+   ========================= */
+
+.btn-pay {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #2b8fd6;
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background .2s;
+}
+
+.btn-pay:hover:not(:disabled) {
+  background: #1b6ca8;
+}
+
+.btn-pay:disabled {
+  background: #b7d3e6;
+  cursor: not-allowed;
+}
+
+.recharge-note {
+  margin: 16px 0 0;
+
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #2e8b57;
+
+  min-height: 20px;
+}

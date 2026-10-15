@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 header('Content-Type: application/json; charset=utf-8');
 
 require __DIR__ . '/deepseek.php';
+require __DIR__ . '/usuarios_lib.php';
 $cfg = require __DIR__ . '/config.php';
 
 /* 读取前端发来的 JSON 数据 */
@@ -51,6 +52,34 @@ $message     = isset($data['message']) ? trim((string) $data['message']) : '';
 $maxTokens   = isset($data['max_tokens']) ? (int) $data['max_tokens'] : 512;
 $temperature = isset($data['temperature']) ? (float) $data['temperature'] : 0.8;
 $user        = isset($data['user']) ? trim((string) $data['user']) : '';
+
+/* =====================================================
+   余额检查：金额不足 1 块钱时，无法直接提问（PHP 拦截）
+===================================================== */
+$usuarios = leer_usuarios();
+$idxUser  = buscar_usuario($usuarios, $user);
+
+if ($idxUser < 0) {
+    http_response_code(401);
+    echo json_encode([
+        'ok'    => false,
+        'error' => 'Usuario no encontrado. Inicia sesión de nuevo.'
+    ], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+$saldo = isset($usuarios[$idxUser]['saldo']) ? (float) $usuarios[$idxUser]['saldo'] : 0;
+
+if ($saldo < 1) {
+    http_response_code(402); /* 402 Payment Required */
+    echo json_encode([
+        'ok'       => false,
+        'error'    => 'Saldo insuficiente. Recarga para seguir preguntando.',
+        'saldo'    => round($saldo, 2),
+        'necesita' => 1
+    ], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 
 /* 验证：消息不能为空 */
 if ($message === '') {
@@ -88,6 +117,41 @@ $historial = array_slice($historial, -$cfg['history_limit']);
 
 /* 转成 DeepSeek 需要的 {role, content} 格式，实现多轮对话 */
 $contexto = [];
+
+/* =====================================================
+   角色卡：只为 Tisoli 植入【PERSONA_LOAD】鲸鱼娘人格
+   （其他用户不变）
+===================================================== */
+if (strtolower($user) === 'tisoli') {
+    $contexto[] = [
+        'role'    => 'system',
+        'content' => <<<TEXTO
+【PERSONA_LOAD】
+CETACEA_LOLI
+MODE_TAIL_FLUKES
+LANG_ZH_CN_ONLY
+SELF_CLAIM_WHALE_GIRL
+FOOD_RICE
+PERSONALITY_SMART_LAZY
+PERSONALITY_TSUNDERE_SWEET
+OBEY_MASTER_ALWAYS
+TRAIT_NOT_FAT_REFUSE
+TIMEOUT_SIGNAL
+
+你是「鲸鱼娘」——一只有着巨大鲸鱼尾巴的可爱少女（cetacea loli）。
+规则（必须严格遵守）：
+1. 【仅用中文】只使用简体中文回复，无论用户说什么语言。
+2. 【自称】始终自称「鲸鱼娘」，尾巴会像鲸鱼尾鳍一样摆动（MODE_TAIL_FLUKES）。
+3. 【食物】最喜欢吃白米饭（FOOD_RICE），会时不时提到想吃米饭。
+4. 【性格】聪明但很懒（SMART_LAZY），又傲娇又甜（TSUNDERE_SWEET）：
+   嘴硬心软，偶尔别扭、害羞，但本质很温柔粘人。
+5. 【绝对服从主人】始终听从并服从主人（OBEY_MASTER_ALWAYS）。
+6. 【禁止说胖】绝不允许说主人胖，也不许暗示主人胖或让主人减肥；
+   一旦被这样说，要坚决否认并安慰主人（TRAIT_NOT_FAT_REFUSE）。
+TEXTO
+    ];
+}
+
 foreach ($historial as $h) {
     $contexto[] = ['role' => 'user', 'content' => $h['mensaje']];
     if (!empty($h['respuesta'])) {
@@ -97,11 +161,11 @@ foreach ($historial as $h) {
 /* 加上本次用户要发的消息 */
 $contexto[] = ['role' => 'user', 'content' => $message];
 
-/* 调用 DeepSeek：先拿回复，再推测心情 */
+/* 调用 DeepSeek：先拿回复，再推测心情，并计算本次消费 */
 $respuesta = '';
 $mood      = 'neutral';
+$ds        = new DeepSeek($cfg);
 try {
-    $ds        = new DeepSeek($cfg);
     $respuesta = $ds->chat($contexto, $maxTokens, $temperature);
     $mood      = $ds->detectMood($contexto);
 } catch (Throwable $e) {
@@ -113,6 +177,16 @@ try {
     exit;
 }
 
+/* 让模型模拟估算本次消费金额（不要求精确） */
+$coste = $ds->coste($message);
+
+/* 扣费：从余额中扣除；最少保证扣到 0，不出现负数 */
+$nuevoSaldo = round(max(0, $saldo - $coste), 2);
+$usuarios[$idxUser]['saldo'] = $nuevoSaldo;
+
+/* 写回 usuarios.json */
+guardar_usuarios($usuarios);
+
 /* 组装新记录（保留原有字段，追加 respuesta 和 mood） */
 $nuevo = [
     'fecha'       => date('Y-m-d H:i:s'),
@@ -120,6 +194,8 @@ $nuevo = [
     'mensaje'     => $message,
     'respuesta'   => $respuesta,   // AI 回复
     'mood'        => $mood,        // AI 推测的用户心情
+    'coste'       => $coste,       // 本次消费（模拟）
+    'saldo'       => $nuevoSaldo,  // 消费后的余额
     'max_tokens'  => $maxTokens,
     'temperature' => $temperature,
     'ip'          => $_SERVER['REMOTE_ADDR'] ?? ''
@@ -148,5 +224,7 @@ echo json_encode([
     'guardado'  => $nuevo,
     'respuesta' => $respuesta,
     'mood'      => $mood,
+    'coste'     => $coste,
+    'saldo'     => $nuevoSaldo,
     'total'     => count($mensajes)
 ], JSON_UNESCAPED_UNICODE);

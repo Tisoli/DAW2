@@ -58,6 +58,13 @@
           Login
         </button>
 
+        <!-- 登录后显示余额，点击进入充值界面 -->
+        <button type="button" class="btn-balance" id="balanceBtn" hidden
+          title="Recargar saldo">
+          <span class="balance-icon">€</span>
+          <span id="balanceValue">0.00</span>
+        </button>
+
         <button type="button" class="btn-recharge" id="rechargeBtn">
           Completar
         </button>
@@ -168,17 +175,31 @@
           <input type="password" id="loginPass" name="password" autocomplete="current-password" required>
         </div>
 
+        <!-- Solo visible en modo registro -->
+        <div class="login-field" id="loginEmailField" hidden>
+          <label for="loginEmail">
+            Correo electrónico
+          </label>
+          <input type="email" id="loginEmail" name="email" autocomplete="email">
+        </div>
+
         <p class="login-error" id="loginError" role="alert"></p>
 
         <div class="login-buttons">
           <button type="button" class="btn-cancel" id="loginCancel">
             Cancelar
           </button>
-          <button type="submit" class="btn-send">
+          <button type="submit" class="btn-send" id="loginSubmit">
             Entrar
           </button>
         </div>
 
+        <p class="login-switch">
+          <span id="loginSwitchText">¿No tienes cuenta?</span>
+          <button type="button" class="link-button" id="loginSwitchBtn">
+            Regístrate
+          </button>
+        </p>
       </form>
     </div>
   </div>

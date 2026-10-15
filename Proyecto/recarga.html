@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bigfatfish - Recargar saldo</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="recarga.css">
+</head>
+
+<body>
+
+  <div class="recharge-stage">
+
+    <!-- =========================
+         顶部栏
+         ========================= -->
+    <header class="topbar">
+
+      <div class="brand">
+        <img src="Logo.jpg" alt="Bigfatfish Logo" class="logo">
+        <span class="site-name">Bigfatfish</span>
+      </div>
+
+      <a href="disenio.html" class="back-link">
+        ← Volver al chat
+      </a>
+
+    </header>
+
+
+    <!-- =========================
+         充值卡片
+         ========================= -->
+    <main class="recharge-card">
+
+      <h1>Recargar saldo</h1>
+
+      <p class="recharge-user">
+        Usuario: <strong id="rechargeUser">—</strong>
+        · Saldo actual: <strong id="rechargeSaldo">0.00</strong> €
+      </p>
+
+      <!-- 选择金额（固定档位，不可自定义） -->
+      <section class="amount-section">
+        <h2>Elige una cantidad</h2>
+
+        <div class="amount-grid" id="amountGrid">
+          <button type="button" class="amount-option" data-amount="5">5 €</button>
+          <button type="button" class="amount-option" data-amount="10">10 €</button>
+          <button type="button" class="amount-option" data-amount="20">20 €</button>
+          <button type="button" class="amount-option" data-amount="50">50 €</button>
+        </div>
+      </section>
+
+
+      <!-- 银行卡信息 -->
+      <section class="card-section">
+
+        <h2>Datos de la tarjeta</h2>
+
+        <form id="cardForm" novalidate>
+
+          <div class="field">
+            <label for="cardNumber">Número de tarjeta (16 dígitos)</label>
+            <input type="text" id="cardNumber" inputmode="numeric"
+              maxlength="19" placeholder="1234 5678 9012 3456"
+              autocomplete="cc-number" required>
+          </div>
+
+          <div class="field-row">
+
+            <div class="field">
+              <label for="cardExpiry">Caducidad (MM/AA)</label>
+              <input type="text" id="cardExpiry" inputmode="numeric"
+                maxlength="5" placeholder="MM/AA"
+                autocomplete="cc-exp" required>
+            </div>
+
+            <div class="field">
+              <label for="cardCvv">CVV</label>
+              <input type="password" id="cardCvv" inputmode="numeric"
+                maxlength="4" placeholder="123"
+                autocomplete="cc-csc" required>
+            </div>
+
+          </div>
+
+          <p class="card-error" id="cardError" role="alert"></p>
+
+          <button type="submit" class="btn-pay" id="payBtn" disabled>
+            Pagar y recargar
+          </button>
+
+        </form>
+      </section>
+
+      <p class="recharge-note" id="rechargeNote"></p>
+
+    </main>
+
+  </div>
+
+  <script src="recarga.js"></script>
+
+</body>
+
+</html>

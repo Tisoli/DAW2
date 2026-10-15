@@ -1,10 +1,20 @@
 [
-  {
-    "username": "Tisoli",
-    "password": "Tisoli"
-  },
-  {
-    "username": "Dani",
-    "password": "Dani"
-  }
+    {
+        "username": "Tisoli",
+        "password": "Tisoli",
+        "email": "tisoli@bigfatfish.com",
+        "saldo": 54.45
+    },
+    {
+        "username": "Dani",
+        "password": "Dani",
+        "email": "dani@bigfatfish.com",
+        "saldo": 5
+    },
+    {
+        "username": "Sete",
+        "password": "1234",
+        "email": "sihaoli365@gmail.com",
+        "saldo": 5
+    }
 ]

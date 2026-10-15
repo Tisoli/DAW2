@@ -180,6 +180,58 @@ body {
 }
 
 
+/* 余额按钮（右上角，登录后显示） */
+
+.btn-balance {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border-radius: 999px;
+
+  padding: 6px 14px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  border: 1px solid rgba(43, 143, 214, .45);
+
+  background: #eaf7ff;
+
+  color: #1b6ca8;
+
+  transition: background .2s;
+}
+
+.btn-balance:hover {
+  background: #d6ecfb;
+}
+
+.balance-icon {
+  display: inline-grid;
+  place-items: center;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #2b8fd6;
+  color: #fff;
+
+  font-size: 12px;
+}
+
+/* .btn-balance 设了 display:inline-flex，需让 hidden 生效 */
+.btn-balance[hidden] {
+  display: none;
+}
+
+
 /* 用户头像 */
 
 .avatar {
@@ -464,6 +516,12 @@ body {
   margin-bottom: 14px;
 }
 
+/* El campo oculto (hidden) debe ganar a display:flex.
+   Así el correo solo aparece en modo registro. */
+.login-field[hidden] {
+  display: none;
+}
+
 .login-field label {
   font-size: 13px;
   font-weight: 700;
@@ -522,6 +580,38 @@ body {
 
 .btn-cancel:hover {
   background: rgba(43, 143, 214, .1);
+}
+
+
+/* 登录 / 注册 切换链接 */
+.login-switch {
+  margin: 16px 0 0;
+
+  font-size: 13px;
+  color: #245;
+
+  text-align: center;
+}
+
+.link-button {
+  border: 0;
+
+  background: transparent;
+
+  padding: 0 4px;
+
+  color: #2b8fd6;
+
+  font: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+}
+
+.link-button:hover {
+  color: #1b6ca8;
 }
 
 
