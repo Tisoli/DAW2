@@ -4,7 +4,6 @@
 Bigfatfish - DeepSeek 配置
 ==========================================
 把 API Key 换成你自己的。
-也可以改用环境变量 DEEPSEEK_API_KEY（更安全，推荐上线时用）。
 */
 
 return [
