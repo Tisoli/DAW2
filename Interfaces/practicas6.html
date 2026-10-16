@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="Box1">Box1</div>
+        <div class="Box2">Box2</div>
+        <div class="Box3">Box3</div>
+        <div class="Box4">Box4</div>
+        <div class="Box5">Box5</div>
+    </div>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .contenedor {
+            width: 300px;
+            height: 300px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+            grid-template-areas:
+                "Box1 .   Box2"
+                ".    Box5 ."
+                "Box3 .   Box4";
+
+            background-color: limegreen;
+            border: solid pink 1px;
+        }
+
+        .Box1 {
+            grid-area: Box1;
+        }
+
+        .Box2 {
+            grid-area: Box2;
+        }
+
+        .Box3 {
+            grid-area: Box3;
+        }
+
+        .Box4 {
+            grid-area: Box4;
+        }
+
+        .Box5 {
+            grid-area: Box5;
+        }
+
+        .Box1 {
+            align-self: start;
+            justify-self: start;
+        }
+
+        .Box2 {
+            align-self: start;
+            justify-self: end;
+        }
+
+        .Box3 {
+            align-self: end;
+            justify-self: start;
+        }
+
+        .Box4 {
+            align-self: end;
+            justify-self: end;
+        }
+
+        .Box5 {
+            align-self: center;
+            justify-self: center;
+        }
+
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            border: solid blue 1px;
+        }
+    </style>
+</body>
+
+</html>

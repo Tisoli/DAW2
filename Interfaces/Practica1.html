@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Practica1</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: sans-serif;
@@ -19,19 +24,51 @@
       min-height: 100vh;
     }
 
-    .logo    { grid-area: logo;        background: #333; color: #fff; }
-    .nav     { grid-area: nav;         background: #444; color: #fff; }
-    .aside-left  { grid-area: aside-left;  background: #ddd; }
-    .body    { grid-area: body;        background: #fff; }
-    .aside-right { grid-area: aside-right; background: #ddd; }
-    .footer  { grid-area: footer;      background: #333; color: #fff; }
+    .logo {
+      grid-area: logo;
+      background: #333;
+      color: #fff;
+    }
 
-    .logo, .nav, .aside-left, .body, .aside-right, .footer {
+    .nav {
+      grid-area: nav;
+      background: #444;
+      color: #fff;
+    }
+
+    .aside-left {
+      grid-area: aside-left;
+      background: #ddd;
+    }
+
+    .body {
+      grid-area: body;
+      background: #fff;
+    }
+
+    .aside-right {
+      grid-area: aside-right;
+      background: #ddd;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: #333;
+      color: #fff;
+    }
+
+    .logo,
+    .nav,
+    .aside-left,
+    .body,
+    .aside-right,
+    .footer {
       padding: 1rem;
       border: 1px solid #ccc;
     }
   </style>
 </head>
+
 <body>
   <div class="logo">Logo</div>
   <nav class="nav">Navegacion</nav>
@@ -40,4 +77,5 @@
   <aside class="aside-right">derecha</aside>
   <footer class="footer">Pie</footer>
 </body>
+
 </html>
