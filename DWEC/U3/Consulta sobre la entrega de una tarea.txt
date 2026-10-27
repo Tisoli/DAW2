@@ -1,0 +1,13 @@
+Buenos días, profe
+
+Me he dado cuenta de que olvidé entregar una tarea en la plataforma, aunque tengo el trabajo realizado y subido a GitHub.
+
+Quería preguntarle si sería posible aportar el historial de commits y las fechas de subida de GitHub como prueba de que realicé el trabajo dentro del plazo establecido.
+
+https://github.com/Tisoli/DAW2/blob/main/DWEC/U3/ejercicios3.1.js
+
+Disculpe las molestias y el despiste. Quedo a la espera de su respuesta.
+
+Muchas gracias por su comprensión.
+
+Un saludo.
