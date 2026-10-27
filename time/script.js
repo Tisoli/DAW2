@@ -212,19 +212,29 @@ function renderNowNext(){
   } else if (info.now && info.now.isBreak){
     nowSubject.textContent = "课间休息";
     nowSubject.classList.add("free");
-    const left = info.now.endMin - nowMinutes(d);
-    nowSub.textContent = `休息中 · 还剩 ${Math.ceil(left)} 分钟`;
+    const leftSec = Math.max(0, Math.ceil((info.now.endMin - nowMinutes(d)) * 60));
+    const mm = Math.floor(leftSec / 60);
+    const ss = leftSec % 60;
+    nowSub.textContent = `休息中 · 还剩 ${mm}:${pad(ss)}`;
     nowBar.style.width = "0%";
   } else if (info.now && info.now.subject){
     nowSubject.textContent = info.now.subject;
     nowSubject.classList.remove("free");
     const p = info.now.period;
     const startM = toMinutes(p.start), endM = toMinutes(p.end);
-    const left = endM - nowMinutes(d);
+    const curM = nowMinutes(d);          // 含秒的小数分钟
+    const left = endM - curM;
     const total = endM - startM;
-    const done = Math.min(100, Math.max(0, ((nowMinutes(d)-startM)/total)*100));
-    nowBar.style.width = done.toFixed(1) + "%";
-    nowSub.textContent = `${p.start}–${p.end} · 本节课还剩 ${Math.ceil(left)} 分钟 (${(left/total*100).toFixed(0)}%)`;
+    // 剩余百分比（秒级精度，保留 3 位小数，每秒都在减少）
+    const leftPct = Math.max(0, Math.min(100, (left / total) * 100));
+    const donePct = 100 - leftPct;
+    nowBar.style.width = donePct.toFixed(2) + "%";
+    // 剩余时间精确到秒
+    const leftSec = Math.max(0, Math.ceil(left * 60));
+    const mm = Math.floor(leftSec / 60);
+    const ss = leftSec % 60;
+    nowSub.textContent =
+      `${p.start}–${p.end} · 还剩 ${mm}:${pad(ss)} (${leftPct.toFixed(3)}%)`;
   } else {
     nowSubject.textContent = "空闲";
     nowSubject.classList.add("free");
