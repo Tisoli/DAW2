@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>课表 · 倒计时看板</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 背景层：等你生成图片后，把 assets/bg.jpg 放好即可，见 class.txt 说明 -->
+  <div class="bg-layer" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <!-- 顶部品牌区：logo 占位 -->
+    <header class="brand">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo" onerror="this.style.display='none';this.parentNode.classList.add('logo-fallback')">
+        <span class="logo-mark">DAW</span>
+      </div>
+      <div class="brand-text">
+        <h1>课表 · 倒计时看板</h1>
+        <p>DAW2 · 2027-03-08 结束学业</p>
+      </div>
+    </header>
+
+    <!-- 时钟（滚动时始终置顶） -->
+    <section class="card clock-card" id="clockCard">
+      <div class="clock">
+        <div class="clock-main">
+          <span class="time" id="time">--:--:--</span>
+          <div class="clock-side">
+            <span class="weekday" id="weekday">—</span>
+            <span class="date" id="date">—</span>
+          </div>
+        </div>
+        <div class="clock-tools">
+          <button class="mini" id="historyBtn" title="查看所有历史事件">📜 历史事件</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 当前 / 下一节 -->
+    <section class="card">
+      <h2>当前课程</h2>
+      <div class="now-grid">
+        <div class="now-box now-current">
+          <div class="label">现在正在上</div>
+          <div class="subject" id="nowSubject">—</div>
+          <div class="sub" id="nowSub">—</div>
+          <div class="progress"><i id="nowBar"></i></div>
+        </div>
+        <div class="now-box now-next">
+          <div class="label">下一节课</div>
+          <div class="subject" id="nextSubject">—</div>
+          <div class="sub" id="nextSub">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 事件倒计时 -->
+    <section class="card">
+      <h2>事件倒计时（最近 3 个）</h2>
+      <div class="event-form">
+        <input type="text" id="evName" placeholder="事件名称，例如：项目答辩" maxlength="40">
+        <input type="date" id="evDate">
+        <button id="evAdd">添加事件</button>
+      </div>
+      <div class="events" id="evList"></div>
+    </section>
+
+    <!-- 每门课剩余节数 -->
+    <section class="card">
+      <h2>课程节数统计（至 <span id="endDateLabel"></span>）</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="col-idx">#</th>
+              <th>课程</th>
+              <th class="num">每周</th>
+              <th class="num">总节数</th>
+              <th class="num">已上</th>
+              <th class="num">剩余</th>
+              <th style="width:20%">进度</th>
+            </tr>
+          </thead>
+          <tbody id="statBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- 历史事件面板 -->
+  <div class="history-panel" id="historyPanel">
+    <div class="history-box">
+      <div class="history-head">
+        <h3>历史事件 <span class="count" id="historyCount"></span></h3>
+        <button class="history-close" id="historyClose" title="关闭">×</button>
+      </div>
+      <div class="history-body" id="historyBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
