@@ -17,3 +17,5 @@ puesto2.dameDatos = function(){
 
 };
 console.log(puesto2.dameDatos());
+
+
