@@ -1,0 +1,117 @@
+.nav {
+    background-color: #000b8f;
+    width: 100%;
+}
+
+
+
+.nav__ul {
+    display: flex;
+    list-style: none;
+    padding: 0 40px;
+}
+
+.nav__li {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.nav__li i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.nav__li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav__li:hover {
+    background-color: #252080;
+}
+
+
+.nav__responsive-ul {
+    display: none;
+    list-style: none;
+    background-color: #5064d9;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+
+.nav__toggle {
+    display: none;
+}
+
+.nav__responsive-button-continer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #7898c5;
+    cursor: pointer;
+}
+
+.nav__responsive-button {
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav__li-continer {
+    display: block;
+    position: relative;
+    top: -1000px;
+    height: 100%;
+    z-index: 1;
+    width: 55%;
+    padding-top: -100px;
+    transition: all 2s;
+    background-color: #302078;
+}
+
+
+.nav__responsive-li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav__responsive-li i {
+    color: white;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.nav__responsive-li a {
+    color: white;
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .nav__ul {
+        display: none;
+    }
+
+    .nav__responsive-ul {
+        display: block;
+        min-height: 100vh;
+    }
+
+    .nav__toggle:checked~.nav__li-continer {
+        display: block;
+    }
+
+    .nav__responsive-li:hover {
+        background-color: #21165e;
+    }
+    .nav__toggle:checked ~ .nav__li-continer {
+    top: 0;   /* 关键：从 -100000px 回到 0 */
+}
+}
