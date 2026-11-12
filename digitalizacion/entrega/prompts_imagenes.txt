@@ -44,22 +44,28 @@ corporate photography, 16:9 --no text, logos, brands
 
 
 ================================================================
-IMAGEN 2 — 02_escalera.jpg  (16:9, sección 2 "el problema")
+IMAGEN 2 — 02_recogepedidos.jpg  (16:9, sección 2 "el problema")
 ================================================================
-QUÉ ES: el problema: un trabajador subido a una escalera de mano
-cogiendo una caja de una estantería muy alta. Tiene que verse el riesgo.
+QUÉ ES: el riesgo real: un operario subido en un recogepedidos eléctrico
+a diez metros, con las horquillas mal metidas en el palé. El palé está
+inclinado y a punto de moverse. No es una escalera: es una máquina.
 
 EN:
-A warehouse worker standing high on a portable stepladder reaching for a
-cardboard box on the top shelf of tall steel racking, one hand holding
-the box, the ladder slightly unstable, slightly worried expression,
-dramatic but realistic lighting, documentary photography style, 16:9,
-safety-risk atmosphere --no text, logos, hard hats with brands
+A warehouse operator standing on the elevated platform of an electric
+order picker ten metres high beside tall steel racking, both hands on a
+wooden pallet that is slightly tilted and unstable, the forklift forks
+not fully inserted into the pallet, tense body language, safety harness
+and helmet, industrial lighting, realistic documentary photography,
+16:9 --no text, logos, brands
 
 中文提示词:
-一名仓库工人站在很高的便携式人字梯上，伸手去拿高货架顶层的纸箱，
-一手扶着箱子，梯子看起来不太稳，表情略带紧张，
-写实纪实摄影风格，光线戏剧化，突出危险感，16:9，不要文字和品牌标识
+一名仓库操作员站在十米高的电动拣货车（order picker）平台上，
+旁边是高大的钢结构货架，双手扶着一个略微歪斜、不太稳的木托盘，
+货叉没有完全插进托盘，姿态紧张，系着安全带、戴安全帽，
+工业照明，写实纪实摄影，16:9，画面中不要出现文字和品牌标识
+
+→ 关键：要能看出「人已经升到高处、货叉没插准、托盘要倒」这三件事。
+   生成 4 张挑一张：哪张最像「马上要出事」就用哪张。
 
 
 ================================================================
@@ -158,7 +164,7 @@ además es el punto que evalúa el profesor (representación del proceso).
 RESUMEN DE ARCHIVOS
 ================================================================
 01_hero.jpg          16:9   portada + diapositiva 1
-02_escalera.jpg      16:9   problema (riesgo en altura)
+02_recogepedidos.jpg 16:9   problema (riesgo en altura y palé mal cogido)
 03_robot_alto.jpg    3:4    robot sacando palé de 12 m
 04_cintas.jpg        16:9   cinta + canales (texto encima, tú)
 05_etiquetado.jpg    16:9   trabajo manual que se queda

@@ -16,7 +16,7 @@ TITULO_ES = ("De lo analógico a lo inteligente: robots en un almacén "
 TITULO_ZH = "从模拟到智能：海外仓用机器人替代人工拣货"
 
 AUTOR = "[Tu nombre]"
-PALABRAS_POR_MINUTO = 95
+PALABRAS_POR_MINUTO = 100
 
 # (titulo_es, titulo_zh, fig, [es], [zh])
 BLOQUES = [
@@ -38,14 +38,14 @@ BLOQUES = [
         [
             "La empresa se llama NovaCargo Ibérica. Es un almacén internacional: recibe mercancía de Asia y prepara pedidos para clientes de España y de la Unión Europea.",
             "Tiene 8.000 metros cuadrados y estanterías de 12 metros de altura. Trabajan 60 personas y salen unos 3.000 pedidos al día.",
-            "El proceso es así. El cliente compra en una página web y el pedido llega a un programa sencillo, que crea una lista de productos. El trabajador coge la lista, camina por los pasillos y busca el producto. Si está en una estantería alta, sube por una escalera. Después pone todo en un carro, va a la mesa de empaquetado, imprime la etiqueta, la pega en la caja y deja el paquete en el muelle del transportista.",
-            "Los muelles 1, 2 y 3 son para Correos, que es el envío normal. Los muelles 4, 5 y 6 son para UPS, que es el envío urgente. Los muelles 7, 8 y 9 son para ASM. Si el cliente paga más, el pedido va por UPS y sale el mismo día.",
+            "El proceso es así. El cliente compra en una página web y el pedido llega a un programa sencillo que crea una lista. El trabajador camina por los pasillos y busca el producto; si está en una estantería alta, sube con un recogepedidos eléctrico. Luego pone todo en un carro, va a la mesa, imprime la etiqueta, la pega y deja el paquete en el muelle del transportista.",
+            "Los muelles 1, 2 y 3 son para Correos (envío normal), los 4, 5 y 6 para UPS (urgente) y los 7, 8 y 9 para ASM. Si el cliente paga más, el pedido va por UPS y sale el mismo día.",
         ],
         [
             "公司叫 NovaCargo Ibérica，是一家海外仓：从亚洲收货，为西班牙和欧盟的客户备货发货。",
             "仓库 8.000 平方米，货架高 12 米。60 名员工，每天出约 3.000 单。",
-            "流程是这样的：顾客在网上下单，订单进一个很简单的程序，生成一张商品清单。员工拿着清单走过通道找货，如果货在高架上，就爬梯子。然后把货放进推车，到打包台打印面单、贴单，再把包裹放到承运商的月台。",
-            "1、2、3 号月台给 Correos（普通件），4、5、6 号给 UPS（加急件），7、8、9 号给 ASM。顾客加钱就走 UPS，当天发出。",
+            "流程是这样的：顾客网上下单，订单进一个很简单的程序，生成一张清单。员工走过通道找货，货在高架上就开电动拣货车上去。然后把货放进推车，到打包台打印面单、贴单，再把包裹放到承运商的月台。",
+            "1、2、3 号月台给 Correos（普通件），4、5、6 号给 UPS（加急件），7、8、9 号给 ASM。加钱就走 UPS，当天发出。",
         ],
     ),
     (
@@ -54,14 +54,14 @@ BLOQUES = [
         "«图 2» 工人爬梯取货 · 待插入 img/02_escalera.jpg",
         [
             "Este sistema tiene cuatro problemas.",
-            "Primero, la salud. Subir escaleras y mover cajas de quince kilos todo el día produce lesiones de espalda y caídas. En este sector, el sobreesfuerzo es la primera causa de baja. Un trabajador camina unos doce kilómetros en un turno.",
+            "Primero, la salud y la seguridad. Las estanterías altas se trabajan con máquina, no a mano, pero el riesgo sigue ahí: el operario tiene que meter las horquillas en el palé a doce metros y, si calcula mal, el palé se mueve, cae o golpea la máquina. Y mover cajas de quince kilos todo el día produce lesiones de espalda. En este sector, el sobreesfuerzo es la primera causa de baja. Además, un trabajador camina unos doce kilómetros en un turno.",
             "Segundo, la velocidad. Una persona prepara unas ochenta cajas por hora. En el Black Friday llegan seis mil pedidos en un día y el almacén no puede con ellos: se hacen horas extra y aun así hay retrasos.",
             "Tercero, los errores. Hay productos muy parecidos y el trabajador cansado se equivoca. Un error es una devolución, un cliente enfadado y un coste doble.",
             "Cuarto, el espacio. Las estanterías altas están medio vacías, porque nadie quiere subir. La empresa paga metros cuadrados que no usa.",
         ],
         [
             "这套做法有四个问题。",
-            "第一是健康。整天爬梯子、搬十五公斤的箱子，会造成腰伤和跌落。这个行业里，用力过度是第一大工伤原因。一名员工一个班次要走大约十二公里。",
+            "第一是健康与安全。高架作业靠机器而不是人力，但风险还在：操作员要在十二米高处把货叉插进托盘，判断稍有偏差，托盘就会晃动、掉落或撞到机器。何况整天搬十五公斤的箱子会造成腰伤。这个行业里，用力过度是第一大工伤原因。另外，一名员工一个班次要走大约十二公里。",
             "第二是速度。一个人一小时大约备八十箱。黑五当天来六千单，仓库扛不住：只能加班，还是会延误。",
             "第三是错误。很多商品长得很像，累了的员工就会拿错。一次错就是一次退货、一个生气的客户和双倍成本。",
             "第四是空间。高架一半是空的，因为没人愿意爬上去。公司付了租金却没用上。",
@@ -73,19 +73,19 @@ BLOQUES = [
         "«图 3» 自动叉车取高架托盘 img/03_robot_alto.jpg ｜ «图 4» 传送带与分拣格口 img/04_cintas.jpg",
         [
             "Mi propuesta tiene tres capas.",
-            "La primera son los robots. Quince robots móviles llevan estanterías enteras hasta la mesa de trabajo: es el sistema «goods to person», la mercancía va a la persona. Además, dos carretillas automáticas sacan los palés de las estanterías de doce metros. Los robots usan LiDAR y leen códigos del suelo, así que no hace falta obra.",
+            "La primera son los robots. Quince robots móviles llevan estanterías enteras hasta la mesa de trabajo: es el sistema «goods to person», la mercancía va a la persona. Además, dos carretillas automáticas sacan los palés de las estanterías de doce metros. Estas carretillas colocan las horquillas con un láser, así que no fallan al entrar en el palé: el error humano desaparece. Los robots usan LiDAR y leen códigos del suelo, así que no hace falta obra.",
             "La segunda capa es el transporte y la clasificación. Una cinta lleva las cajas a un clasificador, que las manda al canal correcto: canales 1, 2 y 3 para Correos; 4, 5 y 6 para UPS; 7, 8 y 9 para ASM. Un escáner lee la etiqueta y el sistema decide solo.",
             "La tercera capa es el software: un WMS y un WCS que dan órdenes a los robots y a la cinta. Es el cerebro del almacén.",
-            "¿Y las personas? Quedan cuatro puestos: preparar en la mesa, poner la etiqueta, controlar la calidad y cargar el camión. Nadie sube escaleras y nadie camina doce kilómetros.",
-            "Las zonas mixtas, como mantenimiento y devoluciones, van con vallas, escáneres de seguridad y velocidad reducida.",
+            "¿Y las personas? Quedan cuatro puestos: preparar en la mesa, poner la etiqueta, controlar la calidad y cargar el camión. Nadie sube a doce metros y nadie camina doce kilómetros.",
+            "Las zonas mixtas (mantenimiento, devoluciones) van con vallas y velocidad reducida.",
         ],
         [
             "我的方案分三层。",
-            "第一层是机器人。十五台移动机器人（AMR）把整排货架搬到工位，就是「货到人」。另外两台自动叉车负责从十二米高架上取托盘。机器人用激光雷达、读地面二维码，不需要动土改造。",
+            "第一层是机器人。十五台移动机器人（AMR）把整排货架搬到工位，就是「货到人」。另外两台自动叉车负责从十二米高架上取托盘，它们用激光对准托盘，插叉不会插偏，人为失误就消失了。机器人用激光雷达、读地面二维码，不需要动土改造。",
             "第二层是输送和分拣。传送带把纸箱送到分拣机，分拣机按目的地送到对应格口：1、2、3 号给 Correos，4、5、6 号给 UPS，7、8、9 号给 ASM。扫码器读面单，系统自己判断。",
             "第三层是软件：WMS 和 WCS，给机器人和传送带下指令，是仓库的大脑。",
             "那人做什么？剩四个岗位：工位备货、贴面单、质检、装车。没人爬梯子，也没人走十二公里。",
-            "混合区域（维修、退货）要加围栏、安全扫描和限速。",
+            "混合区域（维修、退货）加围栏和限速。",
         ],
     ),
     (
@@ -93,13 +93,13 @@ BLOQUES = [
         "4. 从传统流程到数字化流程",
         "«图 5» 前后对比图（自己用 PPT 画）",
         [
-            "El esquema del trabajo resume el cambio.",
-            "Antes: lista en papel, escaleras, carro y doce kilómetros. Ochenta cajas por hora y un 1,5 % de errores.",
+            "El cambio, en una tabla:",
+            "Antes: lista en papel, recogepedidos, carro y doce kilómetros. Ochenta cajas por hora y un 1,5 % de errores.",
             "Después: robots, cinta y canales por transportista. Ciento ochenta cajas por hora, kilómetro y medio caminando y un 0,4 % de errores.",
         ],
         [
-            "报告里的示意图概括了这个变化。",
-            "之前：纸质清单、梯子、推车、十二公里。每小时八十箱，错误率 1,5%。",
+            "这个变化用一张表说明。",
+            "之前：纸质清单、电动拣货车、推车、十二公里。每小时八十箱，错误率 1,5%。",
             "之后：机器人、传送带、按承运商分的格口。每小时一百八十箱，只走一公里半，错误率 0,4%。",
         ],
     ),
@@ -123,9 +123,9 @@ BLOQUES = [
         "6. 数据",
         "«图 7» 控制台大屏 · 待插入 img/06_pantalla.jpg",
         [
-            "El sistema genera muchos datos: tiempo por pedido, distancia recorrida, errores, paradas de cada robot, ocupación de los canales y devoluciones.",
+            "El sistema genera muchos datos: tiempo por pedido, distancia, errores, paradas de cada robot, ocupación de canales y devoluciones.",
             "Todo se guarda en la base de datos del WMS y se copia en la nube.",
-            "Con esos datos se toman decisiones: poner los productos más vendidos cerca de la mesa; decidir cuántos robots trabajan en cada turno; avisar del mantenimiento antes de que un robot se pare; y abrir más canales para UPS cuando hay muchas urgencias.",
+            "Con esos datos se decide: poner los productos más vendidos cerca de la mesa, cuántos robots trabajar por turno, avisar del mantenimiento antes de una avería y abrir más canales para UPS cuando hay urgencias.",
         ],
         [
             "系统产生大量数据：每单耗时、行走距离、错误数、每台机器人的停机、格口占用率、退货量。",
@@ -142,7 +142,7 @@ BLOQUES = [
             "Economía: inversión alta, pero coste por pedido más bajo.",
             "Sociedad: el empleo de almacén cambia de perfil, de físico a técnico.",
             "Medio ambiente: menos cajas dañadas y menos devoluciones; los robots gastan electricidad.",
-            "Seguridad: aparecen riesgos nuevos, como el mantenimiento y las zonas mixtas. Hay que actualizar la evaluación de riesgos.",
+            "Seguridad: riesgos nuevos (mantenimiento, zonas mixtas) y una evaluación de riesgos que hay que actualizar.",
         ],
         [
             "健康与劳动：工伤和病假变少。但备货工需求下降，技术岗位增加。公司必须培训员工，否则对他们是坏事。",
@@ -172,7 +172,7 @@ BLOQUES = [
         "附录：法规",
         None,
         [
-            "En España, la Ley 31/1995 de Prevención de Riesgos Laborales obliga a evaluar los riesgos y a formar a los trabajadores. Los robots y las carretillas automáticas necesitan marcado CE y la norma ISO 3691-4. Además, la empresa debe informar y consultar a los representantes de los trabajadores antes de cambiar el sistema de trabajo.",
+            "En España, la Ley 31/1995 de Prevención de Riesgos Laborales obliga a evaluar los riesgos y a formar a los trabajadores. Los robots y las carretillas automáticas necesitan marcado CE y la norma ISO 3691-4. Además, hay que informar y consultar a los representantes de los trabajadores antes de cambiar la forma de trabajar.",
         ],
         [
             "在西班牙，《职业风险预防法》Ley 31/1995 要求企业评估风险并培训员工。机器人和自动叉车需要 CE 认证和 ISO 3691-4 标准。此外，改变工作方式前必须告知并咨询员工代表。",
@@ -191,9 +191,7 @@ FIGS = {
     1: [("1.jpg",
          "图 1 · 仓库全景：AMR 把整排货架搬到工位，通道上只剩少量人员",
          "Fig. 1: almacén con robots AMR que llevan las estanterías hasta el puesto de trabajo")],
-    2: [("2.jpg",
-         "图 2 · 现状：工人爬梯到高架取货，这是腰伤和跌落的主要来源",
-         "Fig. 2: un trabajador sube por una escalera para coger una caja del nivel alto")],
+
     3: [("3.jpg",
          "图 3 · 自动叉车从 12 米高架取下托盘，替代人工登高作业",
          "Fig. 3: una carretilla automática baja un palé de una estantería de 12 metros"),
@@ -211,7 +209,7 @@ FIGS = {
 ANTES_DESPUES = [
     ("Situación", "Antes", "Después"),
     ("清单", "Papel y memoria del trabajador", "WMS + WCS, orden automática"),
-    ("Coger el producto", "Andando, con escalera", "AMR y carretilla automática"),
+    ("Coger el producto", "Con recogepedidos eléctrico", "AMR y carretilla automática"),
     ("Recorrido por turno", "12 km", "1,5 km"),
     ("Velocidad", "80 cajas por hora", "180 cajas por hora"),
     ("Errores", "1,5 %", "0,4 %"),
