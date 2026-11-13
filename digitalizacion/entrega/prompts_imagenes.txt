@@ -1,0 +1,173 @@
+================================================================
+PRÁCTICA DIGITALIZACIÓN U1 — PROMPTS DE IMAGEN
+Almacén logístico internacional con robots (NovaCargo Ibérica)
+================================================================
+
+CÓMO USARLO
+-----------
+1. Copia cada bloque en tu generador (Midjourney, DALL·E, Flux, Ideogram,
+   o los chinos: 即梦 / 可灵 / 文心一格).
+2. Genera en 16:9 (horizontal), menos la imagen 3, que va en 3:4.
+3. Guarda los archivos con el nombre que indico y déjalos en:
+   digitalizacion/entrega/img/
+4. IMPORTANTE: la IA escribe mal el texto. Los carteles de los canales
+   («1-3 CORREOS», «4-6 UPS», «7-9 ASM») NO los pidas a la IA: genera la
+   foto sin texto y luego pon el cartel encima en PowerPoint o Canva.
+5. Los prompts están en inglés porque los modelos entienden mejor el inglés.
+   Abajo de cada uno tienes la versión en chino.
+
+ESTILO COMÚN (añádelo al final de cada prompt si quieres coherencia)
+--------------------------------------------------------------------
+"corporate photography, realistic, natural light, neutral colours,
+sharp focus, shallow depth of field, no text, no logos, no watermarks"
+
+
+================================================================
+IMAGEN 1 — 01_hero.jpg  (16:9, portada y diapositiva inicial)
+================================================================
+QUÉ ES: vista general del almacén: pasillos anchos, estanterías altas,
+robots AMR moviendo estanterías, trabajadores con chaleco reflectante.
+
+EN:
+Wide interior shot of a modern Spanish logistics warehouse, very high
+steel racking, wide clean aisles, several low autonomous mobile robots
+carrying shelving units with cardboard boxes, two workers in yellow
+high-visibility vests walking in the background, concrete floor with
+yellow safety lines, bright industrial LED lighting, realistic
+corporate photography, 16:9 --no text, logos, brands
+
+中文提示词:
+现代西班牙物流仓库内部广角照片，超高钢结构货架，宽阔干净的通道，
+几台低矮的自主移动机器人（AMR）正在搬运装着纸箱的货架单元，
+背景有两名穿黄色反光背心的工人走动，混凝土地面画有黄色安全线，
+明亮的工业 LED 照明，写实商业摄影风格，16:9，画面中不要出现文字和品牌标识
+
+
+================================================================
+IMAGEN 2 — 02_recogepedidos.jpg  (16:9, sección 2 "el problema")
+================================================================
+QUÉ ES: el riesgo real: un operario subido en un recogepedidos eléctrico
+a diez metros, con las horquillas mal metidas en el palé. El palé está
+inclinado y a punto de moverse. No es una escalera: es una máquina.
+
+EN:
+A warehouse operator standing on the elevated platform of an electric
+order picker ten metres high beside tall steel racking, both hands on a
+wooden pallet that is slightly tilted and unstable, the forklift forks
+not fully inserted into the pallet, tense body language, safety harness
+and helmet, industrial lighting, realistic documentary photography,
+16:9 --no text, logos, brands
+
+中文提示词:
+一名仓库操作员站在十米高的电动拣货车（order picker）平台上，
+旁边是高大的钢结构货架，双手扶着一个略微歪斜、不太稳的木托盘，
+货叉没有完全插进托盘，姿态紧张，系着安全带、戴安全帽，
+工业照明，写实纪实摄影，16:9，画面中不要出现文字和品牌标识
+
+→ 关键：要能看出「人已经升到高处、货叉没插准、托盘要倒」这三件事。
+   生成 4 张挑一张：哪张最像「马上要出事」就用哪张。
+
+
+================================================================
+IMAGEN 3 — 03_robot_alto.jpg  (3:4, sección 3 "la propuesta")
+================================================================
+QUÉ ES: la solución técnica: carretilla automática sacando un palé
+de una estantería de 12 metros.
+
+EN:
+An automated guided forklift, orange and grey, lifting a wooden pallet
+of cardboard boxes from a 12-metre-high steel racking system, laser
+safety scanners visible on the machine, very tall racking in
+perspective, clean warehouse floor, realistic industrial photography,
+vertical composition, 3:4 --no text, logos
+
+中文提示词:
+一台橙灰色自动导引叉车，正在从 12 米高的钢结构货架上取下装有纸箱的木托盘，
+机器上能看到激光安全扫描仪，货架以强烈透视向上延伸，仓库地面干净，
+写实工业摄影，竖构图 3:4，不要文字和品牌标识
+
+
+================================================================
+IMAGEN 4 — 04_cintas.jpg  (16:9, sección 3 "la propuesta")
+================================================================
+QUÉ ES: cinta transportadora + clasificador con canales por transportista.
+DEJA SIN TEXTO los carteles (los añades tú después).
+
+EN:
+A modern parcel sorting conveyor line inside a warehouse, cardboard
+boxes moving along the belt, several sloping chutes on the right side
+where parcels slide down into separate collecting areas, blue and grey
+metal structure, industrial lighting, clean and organised, empty blank
+white signage boards above each chute (no letters), realistic
+photography, 16:9 --no text, letters, logos
+
+中文提示词:
+仓库内现代化的包裹分拣传送带，纸箱在传送带上移动，
+右侧有多个倾斜滑槽，包裹滑入不同的收集区，
+蓝灰色金属结构，工业照明，整洁有序，
+每个滑槽上方是空白的白色标牌（上面没有任何文字），写实摄影，16:9
+
+→ 之后在 PPT/Canva 里给滑槽加上：1-3 CORREOS / 4-6 UPS / 7-9 ASM
+
+
+================================================================
+IMAGEN 5 — 05_etiquetado.jpg  (16:9, sección 5 "el proceso")
+================================================================
+QUÉ ES: el trabajo que se queda en manos de las personas: poner la
+etiqueta y controlar la calidad.
+
+EN:
+Close-up of a warehouse worker at a packing table sticking a white
+shipping label on a cardboard box, a small screen with a barcode
+scanner beside her, other boxes waiting on the table, warm light,
+hands and label in focus, realistic corporate photography, 16:9
+--no readable text, logos
+
+中文提示词:
+仓库员工在打包台前给纸箱贴白色快递面单的特写，旁边有一台小屏幕和条码扫描枪，
+台上还有其他待处理的纸箱，暖色灯光，焦点在双手和面单上，
+写实商业摄影，16:9，面单上不要出现可读的文字和品牌
+
+
+================================================================
+IMAGEN 6 — 06_pantalla.jpg  (16:9, sección 6 "los datos")
+================================================================
+QUÉ ES: los datos: pantalla de control con pedidos, robots y canales.
+La IA pondrá números falsos: úsala solo como fondo, o mejor, sustituye
+la pantalla por un gráfico tuyo.
+
+EN:
+Two warehouse supervisors looking at a large wall monitor showing an
+abstract operations dashboard, simple blue and white charts and a
+warehouse map with moving dots, dark control room, screens glowing,
+seen from behind, realistic corporate photography, 16:9 --no readable
+text, numbers, logos
+
+中文提示词:
+两名仓库主管看着墙上的大屏幕，屏幕上是抽象的运营仪表盘，
+蓝白色调的简易图表和一张带移动光点的仓库平面图，
+较暗的控制室环境，屏幕发光，从背后拍摄，写实商业摄影，
+16:9，屏幕上不要出现可读的文字、数字和品牌
+
+→ 提示：真实报告里最好用你自己做的图表替换这块屏幕，更有说服力。
+
+
+================================================================
+IMAGEN 7 (OPCIONAL) — 07_antes_despues.jpg  (16:9)
+================================================================
+NO LA GENERES CON IA. El esquema "antes / después" hazlo a mano en
+PowerPoint con dos bloques de texto y una flecha: queda más claro y
+además es el punto que evalúa el profesor (representación del proceso).
+
+
+================================================================
+RESUMEN DE ARCHIVOS
+================================================================
+01_hero.jpg          16:9   portada + diapositiva 1
+02_recogepedidos.jpg 16:9   problema (riesgo en altura y palé mal cogido)
+03_robot_alto.jpg    3:4    robot sacando palé de 12 m
+04_cintas.jpg        16:9   cinta + canales (texto encima, tú)
+05_etiquetado.jpg    16:9   trabajo manual que se queda
+06_pantalla.jpg      16:9   datos / control
+07_antes_despues    —      hacer a mano en PPT
+================================================================
