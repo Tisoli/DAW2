@@ -58,3 +58,34 @@ console.log(tomateYHuevo.setNombre("13981093810947"));
 console.log(tomateYHuevo.getNombre());
 console.log(pescadoHervido.getNombre());
     
+
+const ord1 = {
+    cpu : "I7 12700",
+    ram : "DDR5 32G",
+    getDatos : function(){
+        return this.cpu + ";" + this.ram; 
+    }
+}
+console.log(ord1.getDatos());
+console.log(ord1.hasOwnProperty("cpu"));
+console.log(Object.getPrototypeOf(ord1) === Object.prototype);
+
+class usu {
+    constructor(nombre,fechaNac){
+        this.nombre = nombre;
+        this.fechaNac = fechaNac;
+    }
+
+getDatosPers(){
+    return "El usuairio se llama :" + this.nombre + " Su nacimiento es :" + this.fechaNac;
+}
+};
+const usu1 = new usu("Tiso", "22/04/06");
+console.log(usu1.getDatosPers());
+
+function CentroEduca(tipo,nombre){
+    let tipo = tipo;
+    let nombre = nombre;
+    return getNombre:()=>nombre,
+    setNombre:(nom) => nombre = nom
+}
