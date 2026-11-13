@@ -13,35 +13,36 @@
             padding: 0;
             margin: 0;
         }
+        body{
+            background :radial-gradient(yellow gray greenyellow);
+        }
 
         .grid-container {
             display: grid;
-            background-color: greenyellow;
+            background-color: gray;
             grid-template-rows: repeat(3,150px);
-            grid-template-columns: repeat(3, 150px);
-            grid-auto-rows: 150px;
+            grid-template-columns: repeat(3, minmax(200px ,1fr));
+            grid-gap: 15px;
+            
         }
 
         .grid-item {
             border: 2px solid #000;
+            background: yellowgreen;
+            font-size: 50px;
+            padding: 50px;
         }
 
-        .grid-item:first-child {
-            background-color: #00f;
-
-        }
+        /* .grid-item:first-child {
+        } */
 
         .grid-item:nth-child(3) {
-
-            background-color: #f00;
-
-        }
-
-        .grid-item:nth-child(4) {
-
-            background-color: yellow;
+            grid-column: 4/6;
 
         }
+
+        /* .grid-item:nth-child(4) {
+        } */
     </style>
     <div class="grid-container">
         <div class="grid-item">1</div>
