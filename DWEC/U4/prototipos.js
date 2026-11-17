@@ -86,6 +86,24 @@ console.log(usu1.getDatosPers());
 function CentroEduca(tipo,nombre){
     let tipo = tipo;
     let nombre = nombre;
-    return getNombre:()=>nombre,
+    return getNombre:()=>nombre;
     setNombre:(nom) => nombre = nom
 }
+
+class Educa {
+ #tipo;
+ #nombre;
+ constructor(tipo, nombre) {
+ this.#nombre = nombre;
+ this.#tipo = tipo;
+ }
+ getNombre() {
+ return this.#nombre;
+ }
+ setNombre(nombre) {
+ this.#nombre = nombre;
+ }
+}
+const persona = new Educa('IES', "Enrique");
+console.log(persona.getNombre()); // Carlos
+console.log(persona.#nombre); // SyntaxError: acceso privado no permitido 
