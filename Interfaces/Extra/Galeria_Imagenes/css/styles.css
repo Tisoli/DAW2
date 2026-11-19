@@ -1,0 +1,619 @@
+/* ============================================================
+   NEON ARCADE · Galería de imágenes
+   Práctica de Interfaces · HTML5 + CSS3 (sin frameworks)
+   ------------------------------------------------------------
+   Índice del archivo
+   1. Variables y reset
+   2. Tipografía y estructura base
+   3. Cabecera
+   4. Portada
+   5. Tarjetas de imagen (comunes a las dos galerías)
+   6. Galería 1 · Flexbox
+   7. Galería 2 · CSS Grid
+   8. Conclusión y pie
+   9. Responsive (tablet y móvil)
+  10. Conclusión técnica (comentario final pedido en la práctica)
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIABLES Y RESET
+   ============================================================ */
+:root {
+    --bg: #07080c;
+    --surface: #0e1118;
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #f2f4f8;
+    --muted: #98a1b2;
+    --accent: #c8ff4d;
+    --accent-2: #7b5cff;
+
+    --gap: 16px;          /* separación entre imágenes (una sola fuente de verdad) */
+    --radius: 16px;
+    --page: min(1240px, 100% - 48px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ============================================================
+   2. TIPOGRAFÍA Y ESTRUCTURA BASE
+   ============================================================ */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Dos manchas de luz de fondo, puramente decorativas */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.16;
+    pointer-events: none;
+}
+
+body::before {
+    top: -20vw;
+    left: -15vw;
+    background: var(--accent-2);
+}
+
+body::after {
+    bottom: -25vw;
+    right: -20vw;
+    background: var(--accent);
+}
+
+code {
+    font-family: "Cascadia Code", Consolas, "Courier New", monospace;
+    font-size: 0.88em;
+    color: var(--accent);
+    background-color: rgba(200, 255, 77, 0.08);
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+
+/* ============================================================
+   3. CABECERA
+   ============================================================ */
+.topbar {
+    width: var(--page);
+    margin: 0 auto;
+    padding: 26px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    font-size: 0.9rem;
+}
+
+.brand__thin {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.brand__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 14px var(--accent);
+}
+
+.topnav {
+    display: flex;
+    gap: 26px;
+}
+
+.topnav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.topnav a:hover,
+.topnav a:focus-visible {
+    color: var(--accent);
+}
+
+
+/* ============================================================
+   4. PORTADA
+   ============================================================ */
+.hero {
+    width: var(--page);
+    margin: 0 auto;
+    padding: clamp(40px, 8vw, 90px) 0 clamp(50px, 9vw, 100px);
+}
+
+.hero__kicker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--accent);
+    margin-bottom: 22px;
+}
+
+.hero__title {
+    font-size: clamp(2.6rem, 7.5vw, 5.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+}
+
+.hero__title em {
+    font-style: normal;
+    color: transparent;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.hero__text {
+    max-width: 58ch;
+    margin-top: 26px;
+    color: var(--muted);
+    font-size: clamp(1rem, 1.4vw, 1.1rem);
+}
+
+.hero__text strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.hero__stats {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 44px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+
+.hero__stats strong {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.hero__stats span {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+}
+
+
+/* ============================================================
+   5. BLOQUES Y TARJETAS DE IMAGEN
+   ============================================================ */
+.block {
+    width: var(--page);
+    margin: 0 auto;
+    padding: 70px 0;
+    border-top: 1px solid var(--line);
+}
+
+.block__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: 34px;
+}
+
+.block__num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    line-height: 1;
+}
+
+.block__title {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.block__text {
+    max-width: 62ch;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.98rem;
+}
+
+/* Tarjeta: el marco común de todas las imágenes de la página */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    min-width: 0;
+    min-height: 0;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.card:hover,
+.card:focus-within {
+    border-color: rgba(200, 255, 77, 0.55);
+    box-shadow: 0 24px 50px -24px rgba(200, 255, 77, 0.45);
+}
+
+.card:hover img,
+.card:focus-within img {
+    transform: scale(1.09);
+}
+
+/* Las fotos muy oscuras se aclaran un poco para que se lean bien */
+.card--bright img {
+    filter: brightness(1.35);
+}
+
+/* Pie de foto superpuesto */
+.cap {
+    position: absolute;
+    inset: auto 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(4, 5, 9, 0.94) 15%, rgba(4, 5, 9, 0));
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.card:hover .cap,
+.card:focus-within .cap {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cap__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.cap__tag {
+    flex: 0 0 auto;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #0a0c10;
+    background-color: var(--accent);
+    padding: 4px 9px;
+    border-radius: 999px;
+}
+
+/* Las imágenes destacadas muestran siempre su pie de foto */
+.card.is-featured .cap {
+    opacity: 1;
+    transform: none;
+    padding: 18px;
+    background: linear-gradient(to top, rgba(4, 5, 9, 0.96) 10%, rgba(4, 5, 9, 0));
+}
+
+.card.is-featured .cap__title {
+    font-size: 1rem;
+}
+
+
+/* ============================================================
+   6. GALERÍA 1 · FLEXBOX
+   ============================================================ */
+.flex-gallery {
+    display: flex;
+    flex-wrap: wrap;          /* las filas se crean solas al no caber */
+    align-items: stretch;
+    gap: var(--gap);
+}
+
+/* Anchos: cada fila suma el 100 % descontando los huecos (gap) */
+.fx-xl {
+    flex: 0 0 100%;
+}
+
+.fx-l {
+    flex: 0 0 calc(50% - var(--gap) / 2);          /* 2 por fila  */
+}
+
+.fx-m {
+    flex: 0 0 calc(33.3333% - var(--gap) * 2 / 3); /* 3 por fila  */
+}
+
+.fx-s {
+    flex: 0 0 calc(25% - var(--gap) * 3 / 4);      /* 4 por fila  */
+}
+
+/* Alturas de las filas */
+.h-xl {
+    height: 340px;
+}
+
+.h-lg {
+    height: 280px;
+}
+
+.h-md {
+    height: 240px;
+}
+
+.h-banner {
+    height: 300px;
+}
+
+
+/* ============================================================
+   7. GALERÍA 2 · CSS GRID
+   ============================================================ */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 190px;
+    gap: var(--gap);
+}
+
+/* Las tres imágenes grandes se expanden con span */
+.g-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.g-2x1 {
+    grid-column: span 2;
+}
+
+.g-1x2 {
+    grid-row: span 2;
+}
+
+.g-4x1 {
+    grid-column: span 4;
+}
+
+
+/* ============================================================
+   8. CONCLUSIÓN Y PIE
+   ============================================================ */
+.note {
+    width: var(--page);
+    margin: 0 auto;
+    padding: 70px 0;
+    border-top: 1px solid var(--line);
+}
+
+.note__title {
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+}
+
+.note__text {
+    max-width: 72ch;
+    color: var(--muted);
+}
+
+.note__text strong {
+    color: var(--text);
+}
+
+.footer {
+    width: var(--page);
+    margin: 0 auto;
+    padding: 34px 0 54px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.footer__up {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer__up:hover {
+    color: var(--accent);
+}
+
+
+/* ============================================================
+   9. RESPONSIVE
+   ============================================================ */
+
+/* ---------- TABLET ---------- */
+@media (max-width: 980px) {
+
+    /* Flexbox: pasamos a 2 imágenes por fila (también la imagen a todo el ancho) */
+    .fx-xl,
+    .fx-l,
+    .fx-m,
+    .fx-s {
+        flex: 0 0 calc(50% - var(--gap) / 2);
+    }
+
+    /* Alturas más contenidas */
+    .h-xl {
+        height: 300px;
+    }
+
+    .h-lg {
+        height: 250px;
+    }
+
+    .h-md {
+        height: 220px;
+    }
+
+    .h-banner {
+        height: 260px;
+    }
+
+    /* Grid: misma retícula de 4 columnas, con celdas algo más bajas */
+    .grid-gallery {
+        grid-auto-rows: 150px;
+    }
+
+    .topnav {
+        gap: 18px;
+    }
+}
+
+/* ---------- MÓVIL ---------- */
+@media (max-width: 620px) {
+
+    :root {
+        --page: calc(100% - 28px);
+        --gap: 10px;
+    }
+
+    /* Flexbox: una imagen por fila */
+    .fx-xl,
+    .fx-l,
+    .fx-m,
+    .fx-s {
+        flex: 0 0 100%;
+    }
+
+    .h-xl,
+    .h-lg,
+    .h-md,
+    .h-banner {
+        height: 230px;
+    }
+
+    /* Grid: de 3 columnas a 2 */
+    .grid-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+    }
+
+    .g-2x2 {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .g-2x1,
+    .g-4x1 {
+        grid-column: span 2;
+    }
+
+    .block {
+        padding: 48px 0;
+    }
+
+    .block__head {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .topnav {
+        display: none;
+    }
+
+    .hero__stats {
+        gap: 26px;
+    }
+}
+
+/* Respeto por quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .card,
+    .card img,
+    .cap {
+        transition: none;
+    }
+}
+
+
+/* ============================================================
+   10. CONCLUSIÓN TÉCNICA (comentario pedido en la práctica)
+   ------------------------------------------------------------
+   Tras montar las dos galerías con las mismas imágenes, la
+   tecnología que me ha resultado más práctica y sencilla ha
+   sido CSS GRID, por tres motivos:
+
+   1. Colocación en dos dimensiones: la galería necesita decidir
+      a la vez cuántas columnas y cuántas filas ocupa cada
+      imagen. Con Grid eso es una sola línea (grid-column: span 2
+      / grid-row: span 2) y el navegador recoloca el resto
+      automáticamente; con Flexbox hay que construir cada fila,
+      calcular los flex-basis para que sumen el 100 % y repetir
+      el patrón fila por fila.
+
+   2. Cambio de rejilla en responsive: pasar de 4 columnas a 3 y
+      a 2 es cambiar una propiedad (grid-template-columns). En
+      Flexbox hay que reajustar los anchos de cada tipo de imagen
+      y comprobar que ninguna fila se rompa.
+
+   3. Legibilidad: el HTML no necesita saber cuántas imágenes
+      caben por fila; la retícula vive solo en el CSS.
+
+   Flexbox, en cambio, sigue siendo más directo para lo que es
+   unidimensional: una barra de navegación, una fila de botones o
+   una lista de etiquetas, donde solo importa cómo se reparte el
+   espacio en un eje. Para una galería tipo mosaico, Grid gana.
+   ============================================================ */

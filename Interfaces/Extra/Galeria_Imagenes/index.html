@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Práctica de Interfaces: dos galerías de imágenes, una con Flexbox y otra con CSS Grid.">
+    <title>Neon Arcade · Galería Flexbox y Grid</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="top">
+
+    <!-- ===================== CABECERA ===================== -->
+    <header class="topbar">
+        <a class="brand" href="#top">
+            <span class="brand__dot" aria-hidden="true"></span>
+            NEON<span class="brand__thin">ARCADE</span>
+        </a>
+
+        <nav class="topnav" aria-label="Secciones">
+            <a href="#flex">Flexbox</a>
+            <a href="#grid">CSS Grid</a>
+            <a href="#nota">Conclusión</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===================== PORTADA ===================== -->
+        <section class="hero">
+            <p class="hero__kicker">Práctica · Interfaces · HTML5 + CSS3</p>
+
+            <h1 class="hero__title">
+                Dos galerías,<br>
+                <em>dos técnicas</em>
+            </h1>
+
+            <p class="hero__text">
+                La misma idea —una colección de imágenes de distintos tamaños— resuelta dos veces:
+                primero con <strong>Flexbox</strong> y después con <strong>CSS Grid</strong>.
+                Ambas galerías son independientes y se reorganizan para escritorio, tablet y móvil.
+            </p>
+
+            <ul class="hero__stats">
+                <li><strong>24</strong><span>imágenes colocadas</span></li>
+                <li><strong>2</strong><span>galerías independientes</span></li>
+                <li><strong>3</strong><span>tamaños de pantalla</span></li>
+            </ul>
+        </section>
+
+        <!-- ===================== GALERÍA 1 · FLEXBOX ===================== -->
+        <section id="flex" class="block">
+            <div class="block__head">
+                <span class="block__num">01</span>
+                <div>
+                    <h2 class="block__title">Galería Flexbox</h2>
+                    <p class="block__text">
+                        Construida con <code>display: flex</code>, <code>flex-wrap</code> y
+                        <code>flex-basis</code>. Cada fila suma el 100&nbsp;% del ancho y las tres
+                        imágenes destacadas ocupan el doble de espacio que el resto.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex-gallery">
+                <!-- Fila 1 -->
+                <figure class="card is-featured fx-l h-xl">
+                    <img src="img/imagen1.jpg" alt="Tres personajes de videojuego con neones morados y verdes" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Neón entre amigos</span>
+                        <span class="cap__tag">destacada</span>
+                    </figcaption>
+                </figure>
+                <figure class="card fx-s h-xl">
+                    <img src="img/imagen2.jpg" alt="Nube de humo rosa y azul sobre fondo oscuro" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Humo cromático</span>
+                    </figcaption>
+                </figure>
+                <figure class="card fx-s h-xl">
+                    <img src="img/imagen3.jpg" alt="Personaje trepando por una pared en una ciudad nocturna" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Trepa por la ciudad</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Fila 2 -->
+                <figure class="card fx-s h-md">
+                    <img src="img/imagen4.jpg" alt="Primer plano de una criatura oscura con un ojo iluminado" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Mirada en la oscuridad</span>
+                    </figcaption>
+                </figure>
+                <figure class="card fx-s h-md">
+                    <img src="img/imagen5.jpg" alt="Muro con grafitis de colores fluorescentes" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Graffiti digital</span>
+                    </figcaption>
+                </figure>
+                <figure class="card is-featured fx-l h-md">
+                    <img src="img/imagen6.jpg" alt="Árbol surrealista rosa sobre un paisaje azul" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Árbol imposible</span>
+                        <span class="cap__tag">destacada</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Fila 3 -->
+                <figure class="card fx-m h-lg">
+                    <img src="img/imagen7.jpg" alt="Calavera con efecto de interferencia rosa y azul" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Calavera glitch</span>
+                    </figcaption>
+                </figure>
+                <figure class="card fx-m h-lg">
+                    <img src="img/imagen8.jpg" alt="Rostro femenino rodeado de planetas de colores" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Universo pop</span>
+                    </figcaption>
+                </figure>
+                <figure class="card fx-m h-lg">
+                    <img src="img/imagen9.jpg" alt="Personaje con capa lanzando chispas doradas" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Hechicero</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Fila 4 · imagen a todo el ancho -->
+                <figure class="card is-featured fx-xl h-banner">
+                    <img src="img/imagen10.jpg" alt="Explosión de plumas naranjas y azules sobre fondo negro" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Pluma de fuego</span>
+                        <span class="cap__tag">destacada</span>
+                    </figcaption>
+                </figure>
+
+                <!-- Fila 5 -->
+                <figure class="card card--bright fx-l h-md">
+                    <img src="img/imagen11.jpg" alt="Samurái con luces rojas en la oscuridad" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Samurái neón</span>
+                    </figcaption>
+                </figure>
+                <figure class="card fx-l h-md">
+                    <img src="img/imagen12.jpg" alt="Personaje de pelo azul con destellos eléctricos" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Chispa azul</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===================== GALERÍA 2 · CSS GRID ===================== -->
+        <section id="grid" class="block">
+            <div class="block__head">
+                <span class="block__num">02</span>
+                <div>
+                    <h2 class="block__title">Galería CSS Grid</h2>
+                    <p class="block__text">
+                        Construida con <code>display: grid</code> y una retícula de cuatro columnas.
+                        Las imágenes grandes se expanden con <code>grid-column: span</code> y
+                        <code>grid-row: span</code>, ocupando varias celdas a la vez.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-gallery">
+                <figure class="card is-featured g-2x2">
+                    <img src="img/imagen13.jpg" alt="Tres móviles con ilustraciones del videojuego Among Us" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Trío arcade</span>
+                        <span class="cap__tag">2 × 2</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen14.jpg" alt="El Joker con maquillaje y luz morada" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Joker</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen15.jpg" alt="Capucha oscura con una sonrisa luminosa de neón" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Sonrisa neón</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen16.jpg" alt="Personaje de anime de pelo blanco bajo una luz cálida" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Anime</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen1.jpg" alt="Tres personajes de videojuego con neones morados y verdes" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Neón entre amigos</span>
+                    </figcaption>
+                </figure>
+
+                <figure class="card is-featured g-2x1">
+                    <img src="img/imagen2.jpg" alt="Nube de humo rosa y azul sobre fondo oscuro" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Humo cromático</span>
+                        <span class="cap__tag">2 × 1</span>
+                    </figcaption>
+                </figure>
+                <figure class="card is-featured g-1x2">
+                    <img src="img/imagen3.jpg" alt="Personaje trepando por una pared en una ciudad nocturna" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Trepa por la ciudad</span>
+                        <span class="cap__tag">1 × 2</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen4.jpg" alt="Primer plano de una criatura oscura con un ojo iluminado" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Mirada en la oscuridad</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen9.jpg" alt="Personaje con capa lanzando chispas doradas" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Hechicero</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen10.jpg" alt="Explosión de plumas naranjas y azules sobre fondo negro" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Pluma de fuego</span>
+                    </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="img/imagen11.jpg" alt="Samurái con luces rojas en la oscuridad" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Samurái neón</span>
+                    </figcaption>
+                </figure>
+                <figure class="card is-featured g-4x1">
+                    <img src="img/imagen12.jpg" alt="Personaje de pelo azul con destellos eléctricos" loading="lazy">
+                    <figcaption class="cap">
+                        <span class="cap__title">Chispa azul</span>
+                        <span class="cap__tag">4 × 1</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===================== CONCLUSIÓN ===================== -->
+        <section id="nota" class="note">
+            <h2 class="note__title">¿Cuál ha sido más práctica?</h2>
+            <p class="note__text">
+                Para este diseño, <strong>CSS Grid</strong>: permite pensar la galería como una
+                retícula y hacer que una imagen ocupe varias celdas con una sola línea
+                (<code>grid-column: span 2</code>). Con Flexbox hay que calcular los
+                <code>flex-basis</code> de cada fila para que sumen el 100&nbsp;%, algo más laborioso
+                cuando el diseño tiene dos dimensiones. La explicación completa está comentada al
+                final de <code>css/styles.css</code>.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- ===================== PIE ===================== -->
+    <footer class="footer">
+        <p>Práctica de Interfaces · HTML5 y CSS3, sin frameworks externos.</p>
+        <a class="footer__up" href="#top">Volver arriba ↑</a>
+    </footer>
+
+</body>
+
+</html>
