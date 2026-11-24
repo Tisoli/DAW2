@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Río en el bosque">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#a9d6d2"/><stop offset="1" stop-color="#f8e7c8"/>
+  </linearGradient>
+  <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#588b77"/><stop offset="1" stop-color="#2c594b"/>
+  </linearGradient>
+</defs>
+<rect width="640" height="420" fill="url(#sky)"/>
+<circle cx="166" cy="94" r="42" fill="#fff1bf" opacity=".9"/>
+<path d="M0 255 L105 120 L195 240 L300 105 L430 255 L520 145 L640 270 L640 420 L0 420Z" fill="#588b77" opacity=".92"/>
+<path d="M0 300 L125 190 L220 305 L350 175 L475 315 L570 205 L640 285 L640 420 L0 420Z" fill="#2c594b" opacity=".9"/>
+<path d="M0 310 Q150 260 280 320 T640 300 L640 420 L0 420Z" fill="url(#ground)"/>
+<path d="M0 355 Q130 315 260 360 T640 345" fill="none" stroke="#d7e9c6" stroke-width="7" opacity=".55"/>
+<g fill="#f4e8c9" opacity=".75">
+  <path d="M142 136 l24 -34 22 34z"/>
+  <path d="M300 105 l-23 37 42 -8z"/>
+  <path d="M520 145 l-20 34 38 -9z"/>
+</g>
+<g fill="#2c594b" opacity=".75">
+  <path d="M55 350 l18 -55 18 55z"/><path d="M82 350 l20 -68 20 68z"/>
+  <path d="M545 365 l22 -70 22 70z"/><path d="M575 365 l18 -55 18 55z"/>
+</g>
+<text x="24" y="395" font-family="Arial,sans-serif" font-size="17" fill="#ffffff" opacity=".88">Río en el bosque</text>
+</svg>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y galería</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="cabecera">
+        <nav class="menu">
+            <a class="menu__logo" href="#">Mi sitio web</a>
+            <ul class="menu__lista">
+                <li class="menu__item"><a class="menu__enlace" href="#contacto">Contacto</a></li>
+                <li class="menu__item"><a class="menu__enlace" href="#galeria">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <section class="formulario" id="contacto">
+            <h1 class="formulario__titulo">Formulario de contacto (Flex)</h1>
+            <p class="formulario__descripcion">Envíanos tu consulta mediante el siguiente formulario.</p>
+
+            <form class="formulario__form" action="#" method="post">
+                <div class="formulario__grupo">
+                    <label class="formulario__etiqueta" for="nombre">Nombre</label>
+                    <input class="formulario__campo" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="formulario__grupo">
+                    <label class="formulario__etiqueta" for="email">Correo electrónico</label>
+                    <input class="formulario__campo" type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+                </div>
+
+                <div class="formulario__grupo">
+                    <label class="formulario__etiqueta" for="asunto">Asunto</label>
+                    <input class="formulario__campo" type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje">
+                </div>
+
+                <div class="formulario__grupo">
+                    <label class="formulario__etiqueta" for="mensaje">Mensaje</label>
+                    <textarea class="formulario__campo formulario__campo--mensaje" id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+
+                <button class="formulario__boton" type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+
+        <section class="galeria" id="galeria">
+            <h2 class="galeria__titulo">Galería de imágenes (Grid)</h2>
+            <p class="galeria__descripcion">Una selección de paisajes.</p>
+            <div class="galeria__contenedor">
+                <img class="galeria__imagen galeria__imagen--destacada" src="img/imagen1.svg" alt="Montañas al amanecer">
+                <img class="galeria__imagen" src="img/imagen2.svg" alt="Lago entre montañas">
+                <img class="galeria__imagen" src="img/imagen3.svg" alt="Bosque verde">
+                <img class="galeria__imagen" src="img/imagen4.svg" alt="Costa y acantilados">
+                <img class="galeria__imagen galeria__imagen--destacada" src="img/imagen5.svg" alt="Cumbres nevadas">
+                <img class="galeria__imagen" src="img/imagen6.svg" alt="Atardecer en el valle">
+                <img class="galeria__imagen" src="img/imagen7.svg" alt="Pradera floral">
+                <img class="galeria__imagen galeria__imagen--destacada" src="img/imagen8.svg" alt="Río en el bosque">
+                <img class="galeria__imagen" src="img/imagen9.svg" alt="Desierto al ocaso">
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p class="pie__texto">&copy; 2026 Mi sitio web · Formulario y galería</p>
+    </footer>
+</body>
+</html>

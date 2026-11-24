@@ -1,0 +1,182 @@
+/*
+    EXAMEN PRÁCTICO - DISEÑO DE INTERFACES WEB
+
+    Alumno/a: SihaoLi
+
+    Fecha: 20/11/2026
+
+    Desarrolla aquí los estilos CSS necesarios.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: wheat;
+    color: #333;
+    line-height: 1.5;
+}
+
+.cabecera {
+    display: grid;
+    grid-template-areas:
+        "menu__logo menu__item menu__item";
+
+}
+
+header {
+    background-color: antiquewhite;
+    padding: 15px 30px;
+    border-bottom: 1px solid white;
+
+}
+
+.menu__logo {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    padding: 0 40px;
+    font-size: 30px;
+    text-align: right;
+}
+
+.menu__lista {
+    display: flex;
+    list-style: none;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.menu__item {
+    display: flex;
+    padding: 20px;
+    color: white;
+}
+
+.menu__item i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.menu__item a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu__item:hover {
+    background-color: greenyellow;
+}
+
+.contenido {
+    background-color: #f50e1a;
+    border-radius: 16px;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+.formulario {
+    background-color: #d69cb8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    overflow: hidden;
+    padding: 20px;
+    gap: 20px;
+}
+
+.formulario__titulo {
+    background-color: #a94173;
+    border-radius: 10px;
+    display: flex;
+
+}
+
+.galeria {
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 10px;
+    width: 50%;
+
+}
+.galeria__contenedor{
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    grid-auto-rows: 100px;
+    gap: 8px;
+}
+.galeria__contenedor img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-width: 100;
+    border-radius: 8px;
+}
+.galeria__contenedor .galeria__imagen--destacada{
+    grid-column: span 2;
+}
+
+.pie {
+    grid-area: footer;
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        background-color: #f50e1a;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .formulario {
+        background-color: #d69cb8;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+
+.galeria {
+    padding: 10px;
+    background-color: aqua;
+    border: 1px solid yellowgreen;
+    border-radius: 10px;
+    width: 100%;
+
+}
+.galeria__contenedor{
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    grid-auto-rows: 100px;
+    gap: 8px;
+}
+.galeria__contenedor img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-width: 100;
+    border-radius: 8px;
+}
+.galeria__contenedor .galeria__imagen--destacada{
+    grid-column: span 1;
+}
+    }
